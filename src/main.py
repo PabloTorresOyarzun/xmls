@@ -1,16 +1,19 @@
 from typing import Any
-from litestar import Litestar, get, post, MediaType, Request
+from litestar import Litestar, get, post, MediaType
 from litestar.openapi import OpenAPIConfig
 from litestar.openapi.spec import Contact
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from .models import DIN
 from .services import DINService
 
 
-class ValidationRequest(BaseModel):
-    """Request body for validation endpoints (JSON format)."""
-    xml_content: str
+class XMLRequest(BaseModel):
+    """Request body for XML validation and parsing endpoints."""
+    xml_content: str = Field(
+        description="Contenido XML a procesar. Pega aqui tu documento XML completo.",
+        examples=['<?xml version="1.0"?><test>Hello World</test>']
+    )
 
 
 class ValidationResponse(BaseModel):
@@ -27,30 +30,31 @@ class ParseResponse(BaseModel):
 
 
 class DINRequest(BaseModel):
-    tipoenvio: str = "01"
+    """Request body for generating DIN XML."""
+    tipoenvio: str = Field(default="01", description="Tipo de envio")
     # LOG
-    secuencia: str = "000001"
-    aduana: str = "901"
-    sobre: str = "001"
+    secuencia: str = Field(default="000001", description="Numero de secuencia")
+    aduana: str = Field(default="901", description="Codigo de aduana")
+    sobre: str = Field(default="001", description="Numero de sobre")
     # CABEZA
-    form: str = "15"
-    numidentif: str = ""
-    adu: str = "901"
-    agente: str = "0001"
-    tpodocto: str = "15"
-    tipoingr: str = "1"
+    form: str = Field(default="15", description="Codigo de formulario")
+    numidentif: str = Field(default="", description="Numero de identificacion")
+    adu: str = Field(default="901", description="Codigo de aduana destino")
+    agente: str = Field(default="0001", description="Codigo de agente")
+    tpodocto: str = Field(default="15", description="Tipo de documento")
+    tipoingr: str = Field(default="1", description="Tipo de ingreso")
     # IDENTIFICACION
-    nombre: str = ""
-    direc: str = ""
-    codcomun: str = "13101"
-    rut: str = ""
-    dvrut: str = ""
+    nombre: str = Field(default="", description="Nombre del importador")
+    direc: str = Field(default="", description="Direccion del importador")
+    codcomun: str = Field(default="13101", description="Codigo de comuna")
+    rut: str = Field(default="", description="RUT sin digito verificador")
+    dvrut: str = Field(default="", description="Digito verificador del RUT")
     # TOTALES
-    totitems: str = "1"
-    fob: str = "0.00"
-    flete: str = "0.00"
-    seguro: str = "0.00"
-    cif: str = "0.00"
+    totitems: str = Field(default="1", description="Total de items")
+    fob: str = Field(default="0.00", description="Valor FOB")
+    flete: str = Field(default="0.00", description="Valor del flete")
+    seguro: str = Field(default="0.00", description="Valor del seguro")
+    cif: str = Field(default="0.00", description="Valor CIF")
 
 
 class HealthResponse(BaseModel):
@@ -71,9 +75,9 @@ async def health_check() -> HealthResponse:
 @get("/sample", media_type=MediaType.TEXT)
 async def get_sample_din() -> str:
     """
-    Get a sample DIN XML document.
+    Obtener un documento DIN XML de ejemplo.
 
-    Returns a complete sample DIN XML that can be used as a template.
+    Retorna un XML DIN completo que puede usarse como plantilla.
     """
     sample_din = din_service.create_sample_din()
     return din_service.to_xml(sample_din)
@@ -82,95 +86,60 @@ async def get_sample_din() -> str:
 @get("/sample/json", media_type=MediaType.JSON)
 async def get_sample_din_json() -> dict[str, Any]:
     """
-    Get a sample DIN as JSON.
+    Obtener el DIN de ejemplo como JSON.
 
-    Returns the sample DIN structure as JSON for easier inspection.
+    Retorna la estructura del DIN en formato JSON para facilitar su inspeccion.
     """
     sample_din = din_service.create_sample_din()
     return sample_din.model_dump()
 
 
 # ============================================================================
-# VALIDATE ENDPOINTS - Accept XML directly in request body
+# VALIDATE ENDPOINTS
 # ============================================================================
 
 @post("/validate", media_type=MediaType.JSON)
-async def validate_din_xml(request: Request) -> ValidationResponse:
+async def validate_din_xml(data: XMLRequest) -> ValidationResponse:
     """
-    Validate a DIN XML document against the XSD schema.
+    Validar un documento DIN XML contra el esquema XSD.
 
-    Send XML directly in the request body.
-
-    Example with curl:
-    ```bash
-    curl -X POST http://localhost:8000/validate \\
-         -H "Content-Type: application/xml" \\
-         -d '<?xml version="1.0"?><DIN>...</DIN>'
-    ```
-
-    Or from a file:
-    ```bash
-    curl -X POST http://localhost:8000/validate \\
-         -H "Content-Type: application/xml" \\
-         --data-binary @mi_documento.xml
-    ```
+    Pega el contenido XML en el campo `xml_content` y ejecuta para validar.
     """
-    body = await request.body()
-    xml_content = body.decode("utf-8") if body else ""
+    if not data.xml_content or not data.xml_content.strip():
+        return ValidationResponse(is_valid=False, errors=["El contenido XML esta vacio."])
 
-    if not xml_content.strip():
-        return ValidationResponse(is_valid=False, errors=["Empty request body. Send XML content directly."])
-
-    is_valid, errors = din_service.validate_din(xml_content)
+    is_valid, errors = din_service.validate_din(data.xml_content)
     return ValidationResponse(is_valid=is_valid, errors=errors)
 
 
 @post("/validate/structure", media_type=MediaType.JSON)
-async def validate_structure_xml(request: Request) -> ValidationResponse:
+async def validate_structure_xml(data: XMLRequest) -> ValidationResponse:
     """
-    Validate XML structure only (well-formed check, no schema validation).
+    Validar solo la estructura del XML (que este bien formado).
 
-    Send XML directly in the request body.
-
-    Example with curl:
-    ```bash
-    curl -X POST http://localhost:8000/validate/structure \\
-         -H "Content-Type: application/xml" \\
-         -d '<?xml version="1.0"?><test>Hello</test>'
-    ```
+    NO valida contra el esquema XSD, solo verifica que el XML sea valido sintacticamente.
+    Pega el contenido XML en el campo `xml_content` y ejecuta para validar.
     """
-    body = await request.body()
-    xml_content = body.decode("utf-8") if body else ""
+    if not data.xml_content or not data.xml_content.strip():
+        return ValidationResponse(is_valid=False, errors=["El contenido XML esta vacio."])
 
-    if not xml_content.strip():
-        return ValidationResponse(is_valid=False, errors=["Empty request body. Send XML content directly."])
-
-    is_valid, errors = din_service.validator.validate_structure(xml_content)
+    is_valid, errors = din_service.validator.validate_structure(data.xml_content)
     return ValidationResponse(is_valid=is_valid, errors=errors)
 
 
 @post("/parse", media_type=MediaType.JSON)
-async def parse_din_xml(request: Request) -> ParseResponse:
+async def parse_din_xml(data: XMLRequest) -> ParseResponse:
     """
-    Parse a DIN XML document to JSON.
+    Parsear un documento DIN XML a formato JSON.
 
-    Send XML directly in the request body.
-
-    Example with curl:
-    ```bash
-    curl -X POST http://localhost:8000/parse \\
-         -H "Content-Type: application/xml" \\
-         --data-binary @mi_documento.xml
-    ```
+    Convierte el XML a una estructura JSON para facilitar su inspeccion.
+    Pega el contenido XML en el campo `xml_content` y ejecuta.
     """
-    body = await request.body()
-    xml_content = body.decode("utf-8") if body else ""
-
-    if not xml_content.strip():
-        return ParseResponse(success=False, error="Empty request body. Send XML content directly.")
+    if not data.xml_content or not data.xml_content.strip():
+        return ParseResponse(success=False, error="El contenido XML esta vacio.")
 
     try:
-        din = din_service.from_xml(xml_content)
+        din = din_service.from_xml(data.xml_content)
         return ParseResponse(success=True, data=din.model_dump())
     except Exception as e:
         return ParseResponse(success=False, error=str(e))
@@ -183,17 +152,10 @@ async def parse_din_xml(request: Request) -> ParseResponse:
 @post("/generate", media_type=MediaType.TEXT)
 async def generate_din_xml(data: DINRequest) -> str:
     """
-    Generate a DIN XML document from provided data.
+    Generar un documento DIN XML a partir de datos JSON.
 
-    Send a JSON body with the fields you want to set.
-    Missing fields will use default values.
-
-    Example with curl:
-    ```bash
-    curl -X POST http://localhost:8000/generate \\
-         -H "Content-Type: application/json" \\
-         -d '{"nombre": "MI EMPRESA S.A.", "rut": "76123456", "dvrut": "7"}'
-    ```
+    Completa los campos que desees y ejecuta para generar el XML.
+    Los campos no especificados usaran valores por defecto.
     """
     from datetime import datetime
     from .models.cabeza import (
@@ -342,9 +304,9 @@ async def generate_din_xml(data: DINRequest) -> str:
 @get("/schema/info", media_type=MediaType.JSON)
 async def get_schema_info() -> dict[str, Any]:
     """
-    Get information about the DIN XML schema.
+    Obtener informacion sobre el esquema DIN XML.
 
-    Returns the structure and namespaces used in the DIN schema.
+    Retorna la estructura y namespaces usados en el esquema DIN.
     """
     return {
         "target_namespace": "http://www.aduana.cl/xml/esquemas/EnvioDin",
@@ -385,38 +347,34 @@ async def get_schema_info() -> dict[str, Any]:
 @get("/usage", media_type=MediaType.JSON)
 async def get_usage_examples() -> dict[str, Any]:
     """
-    Get usage examples for all endpoints.
+    Obtener ejemplos de uso de todos los endpoints.
     """
     return {
         "endpoints": {
             "GET /sample": {
-                "description": "Get a sample DIN XML",
+                "description": "Obtener un XML DIN de ejemplo",
                 "curl": "curl http://localhost:8000/sample"
             },
             "GET /sample/json": {
-                "description": "Get sample DIN as JSON",
+                "description": "Obtener el DIN de ejemplo como JSON",
                 "curl": "curl http://localhost:8000/sample/json"
             },
             "POST /validate": {
-                "description": "Validate XML against XSD schema",
-                "curl": "curl -X POST http://localhost:8000/validate -H 'Content-Type: application/xml' --data-binary @documento.xml"
+                "description": "Validar XML contra esquema XSD",
+                "curl": 'curl -X POST http://localhost:8000/validate -H "Content-Type: application/json" -d \'{"xml_content": "<test>hello</test>"}\''
             },
             "POST /validate/structure": {
-                "description": "Check if XML is well-formed",
-                "curl": "curl -X POST http://localhost:8000/validate/structure -H 'Content-Type: application/xml' -d '<test>hello</test>'"
+                "description": "Verificar que el XML este bien formado",
+                "curl": 'curl -X POST http://localhost:8000/validate/structure -H "Content-Type: application/json" -d \'{"xml_content": "<test>hello</test>"}\''
             },
             "POST /parse": {
-                "description": "Convert DIN XML to JSON",
-                "curl": "curl -X POST http://localhost:8000/parse -H 'Content-Type: application/xml' --data-binary @documento.xml"
+                "description": "Convertir DIN XML a JSON",
+                "curl": 'curl -X POST http://localhost:8000/parse -H "Content-Type: application/json" -d \'{"xml_content": "<DIN>...</DIN>"}\''
             },
             "POST /generate": {
-                "description": "Generate DIN XML from JSON data",
-                "curl": "curl -X POST http://localhost:8000/generate -H 'Content-Type: application/json' -d '{\"nombre\": \"MI EMPRESA\", \"rut\": \"12345678\"}'"
+                "description": "Generar DIN XML desde datos JSON",
+                "curl": 'curl -X POST http://localhost:8000/generate -H "Content-Type: application/json" -d \'{"nombre": "MI EMPRESA", "rut": "12345678"}\''
             },
-        },
-        "quick_test": {
-            "validate_structure": "curl -X POST http://localhost:8000/validate/structure -d '<test>hello</test>'",
-            "get_sample_and_validate": "curl -s http://localhost:8000/sample | curl -X POST http://localhost:8000/validate/structure -d @-"
         }
     }
 
@@ -441,37 +399,25 @@ app = Litestar(
 API para confeccionar, probar y presentar XMLs de DIN (Declaracion de Ingreso)
 para el Servicio Nacional de Aduanas de Chile.
 
-## Uso Rapido
+## Como usar
 
-### Validar estructura XML
-```bash
-curl -X POST http://localhost:8000/validate/structure -d '<test>hello</test>'
-```
-
-### Obtener XML de ejemplo
-```bash
-curl http://localhost:8000/sample
-```
-
-### Validar un archivo XML
-```bash
-curl -X POST http://localhost:8000/validate --data-binary @mi_documento.xml
-```
+### Validar XML
+1. Ve al endpoint `POST /validate` o `POST /validate/structure`
+2. En el campo `xml_content`, pega tu documento XML
+3. Ejecuta para ver el resultado
 
 ### Parsear XML a JSON
-```bash
-curl -X POST http://localhost:8000/parse --data-binary @mi_documento.xml
-```
+1. Ve al endpoint `POST /parse`
+2. En el campo `xml_content`, pega tu documento DIN XML
+3. Ejecuta para obtener la estructura JSON
 
-## Endpoints disponibles
+### Generar XML
+1. Ve al endpoint `POST /generate`
+2. Completa los campos que necesites
+3. Ejecuta para obtener el XML generado
 
-- `GET /sample` - Obtener DIN XML de ejemplo
-- `GET /sample/json` - Obtener DIN como JSON
-- `POST /validate` - Validar XML contra esquema XSD
-- `POST /validate/structure` - Verificar que XML este bien formado
-- `POST /parse` - Convertir XML a JSON
-- `POST /generate` - Generar XML desde JSON
-- `GET /usage` - Ver ejemplos de uso
+### Obtener ejemplo
+Usa `GET /sample` para obtener un XML DIN de ejemplo completo.
         """,
         contact=Contact(name="DIN API Support"),
     ),
