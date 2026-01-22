@@ -1,0 +1,33 @@
+from pydantic import BaseModel, Field
+from typing import List, Optional
+from pydantic_xml import BaseXmlModel, element, attr
+
+class ORIGENTRANSPALMACENAJE(BaseXmlModel):
+    paorig: str = element(tag='PAORIG', default=...)
+    gpaorig: str = element(tag='GPAORIG', default=...)
+    paadq: str = element(tag='PAADQ', default=...)
+    gpaadq: str = element(tag='GPAADQ', default=...)
+    viatran: str = element(tag='VIATRAN', default=...)
+    despuert: str = element(tag='DESPUERT', default=...)
+    transb: str = element(tag='TRANSB', default=...)
+    ptoemb: str = element(tag='PTOEMB', default=...)
+    gptodesem: str = element(tag='GPTODESEM', default=...)
+    ptodesem: str = element(tag='PTODESEM', default=...)
+    tpocarga: str = element(tag='TPOCARGA', default=...)
+    desalmac: str = element(tag='DESALMAC', default=...)
+    almacen: str = element(tag='ALMACEN', default=...)
+    fecalmac: str = element(tag='FECALMAC', default=...)
+    fecretiro: str = element(tag='FECRETIRO', default=...)
+    gnomciat: str = element(tag='GNOMCIAT', default=...)
+    codpaiscia: str = element(tag='CODPAISCIA', default=...)
+    numrutcia: str = element(tag='NUMRUTCIA', default=...)
+    digvercia: str = element(tag='DIGVERCIA', default=...)
+    nummanif: str = element(tag='NUMMANIF', default=...)
+    nummanif1: str = element(tag='NUMMANIF1', default=...)
+    nummanif2: str = element(tag='NUMMANIF2', default=...)
+    fecmanif: str = element(tag='FECMANIF', default=...)
+    numconoc: str = element(tag='NUMCONOC', default=...)
+    fecconoc: str = element(tag='FECCONOC', default=...)
+    nomemisor: str = element(tag='NOMEMISOR', default=...)
+    numrutemi: str = element(tag='NUMRUTEMI', default=...)
+    digveremi: str = element(tag='DIGVEREMI', default=...)

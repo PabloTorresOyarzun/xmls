@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/EnvioDin"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/EnvioDin"
+	elementFormDefault="qualified"
+	xmlns:pref="http://www.aduana.cl/xml/esquemas/LOG"
+	xmlns:pref1="http://www.aduana.cl/xml/esquemas/CABEZA"
+	xmlns:pref2="http://www.aduana.cl/xml/esquemas/ITEMS"
+	xmlns:pref3="http://www.aduana.cl/xml/esquemas/VISTOSBUENOS"
+	xmlns:pref4="http://www.aduana.cl/xml/esquemas/BULTOS"
+	xmlns:pref7="http://www.aduana.cl/xml/esquemas/ERRORES"
+	xmlns:pref5="http://www.aduana.cl/xml/esquemas/CUENTASYVALORES"
+	xmlns:pref8="http://www.aduana.cl/xml/esquemas/INSUMO"
+	xmlns:pref6="http://www.aduana.cl/xml/esquemas/PAGODIFERIDO"
+	xmlns:pref10="http://www.aduana.cl/xml/esquemas/ANEXASDIN"
+	xmlns:pref11="http://www.w3.org/2000/09/xmldsig#">
+
+
+	<import schemaLocation="LOG.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/LOG">
+	</import>
+	<import schemaLocation="CABEZA.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/CABEZA">
+	</import>
+	<import schemaLocation="ITEMS.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/ITEMS">
+	</import>
+	<import schemaLocation="VISTOSBUENOS.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/VISTOSBUENOS">
+	</import>
+	<import schemaLocation="BULTOS.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/BULTOS">
+	</import>
+
+	<import schemaLocation="ERRORES.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/ERRORES">
+	</import>
+	<import schemaLocation="CUENTASYVALORES.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/CUENTASYVALORES">
+	</import>
+	<import></import>
+	<import schemaLocation="INSUMO.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/INSUMO">
+	</import>
+	<import schemaLocation="PAGODIFERIDO.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/PAGODIFERIDO">
+	</import>
+	<import schemaLocation="ANEXASDIN.xsd" namespace="http://www.aduana.cl/xml/esquemas/ANEXASDIN"></import>
+	<import schemaLocation="xmldsig-core-schema.xsd"
+		namespace="http://www.w3.org/2000/09/xmldsig#">
+	</import>
+	<complexType name="DIN">
+		<sequence>
+			<element name="TIPOENVIO" type="string"></element>
+			<element name="LOG" type="pref:LOG"></element>
+			<element name="CABEZA" type="pref1:CABEZA"></element>
+			<element name="ITEMS" type="pref2:ITEMS"></element>
+			<element name="VISTOSBUENOS" type="pref3:VISTOSBUENOS"></element>
+			<element name="BULTOS" type="pref4:BULTOS"></element>
+
+			<element name="CUENTASYVALORES"
+				type="pref5:CUENTASYVALORES">
+			</element>
+			<element name="PAGODIFERIDO" type="pref6:PAGODIFERIDO"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="ANEXASDIN" type="pref10:ANEXASDIN" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="ERRORES" type="pref7:ERRORES"></element>
+			<element ref="pref11:Signature"></element>
+		</sequence>
+	</complexType>
+
+	<element name="DIN" type="tns:DIN"></element>
+</schema>

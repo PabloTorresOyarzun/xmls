@@ -1,0 +1,32 @@
+from pydantic import BaseModel, Field
+from typing import List, Optional
+from pydantic_xml import BaseXmlModel, element, attr
+
+class ITEM(BaseXmlModel):
+    numitem: str = element(tag='NUMITEM', default=...)
+    dnombre: str = element(tag='DNOMBRE', default=...)
+    dmarca: str = element(tag='DMARCA', default=...)
+    dvariedad: str = element(tag='DVARIEDAD', default=...)
+    dotro1: str = element(tag='DOTRO1', default=...)
+    dotro2: str = element(tag='DOTRO2', default=...)
+    atr5: str = element(tag='ATR5', default=...)
+    atr6: str = element(tag='ATR6', default=...)
+    sajuitem: str = element(tag='SAJUITEM', default=...)
+    ajuitem: str = element(tag='AJUITEM', default=...)
+    cantmerc: str = element(tag='CANTMERC', default=...)
+    medida: str = element(tag='MEDIDA', default=...)
+    codestum: str = element(tag='CODESTUM', default=...)
+    preunit: str = element(tag='PREUNIT', default=...)
+    arancala: str = element(tag='ARANCALA', default=...)
+    numcor: str = element(tag='NUMCOR', default=...)
+    numacu: str = element(tag='NUMACU', default=...)
+    concupo: str = element(tag='CONCUPO', default=...)
+    arancnac: str = element(tag='ARANCNAC', default=...)
+    cifitem: str = element(tag='CIFITEM', default=...)
+    advalala: str = element(tag='ADVALALA', default=...)
+    adval: str = element(tag='ADVAL', default=...)
+    valad: str = element(tag='VALAD', default=...)
+    observacionesitem: List['OBSERVACIONESITEM'] = element(tag='OBSERVACIONESITEM', default_factory=list)
+    cuentasitem: List['CUENTASITEM'] = element(tag='CUENTASITEM', default_factory=list)
+    insumos: List['INSUMOS'] = element(tag='INSUMOS', default_factory=list)
+    anexas: List['ANEXAS'] = element(tag='ANEXAS', default_factory=list)

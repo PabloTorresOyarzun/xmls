@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  din-service:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - LITESTAR_DEBUG=true
