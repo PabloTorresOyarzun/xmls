@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header />
+   <soapenv:Body>
+      <DIN xmlns:ns10="http://www.aduana.cl/xml/esquemas/ITEM" xmlns:ns11="http://www.aduana.cl/xml/esquemas/OBSERVACIONITEM" xmlns:ns12="http://www.aduana.cl/xml/esquemas/OBSERVACIONESITEM" xmlns:ns13="http://www.aduana.cl/xml/esquemas/CUENTAITEM" xmlns:ns14="http://www.aduana.cl/xml/esquemas/CUENTASITEM" xmlns:ns15="http://www.aduana.cl/xml/esquemas/INSUMO" xmlns:ns16="http://www.aduana.cl/xml/esquemas/INSUMOS" xmlns:ns17="http://www.aduana.cl/xml/esquemas/ANEXA" xmlns:ns18="http://www.aduana.cl/xml/esquemas/ANEXAS" xmlns:ns19="http://www.aduana.cl/xml/esquemas/ITEMS" xmlns:ns2="http://www.aduana.cl/xml/esquemas/LOG" xmlns:ns20="http://www.aduana.cl/xml/esquemas/VISTOBUENO" xmlns:ns21="http://www.aduana.cl/xml/esquemas/VISTOSBUENOS" xmlns:ns22="http://www.aduana.cl/xml/esquemas/BULTOS" xmlns:ns23="http://www.aduana.cl/xml/esquemas/BULTO" xmlns:ns24="http://www.aduana.cl/xml/esquemas/CUENTASYVALORES" xmlns:ns25="http://www.aduana.cl/xml/esquemas/CUENTAGIRO" xmlns:ns26="http://www.aduana.cl/xml/esquemas/CUENTASGIRO" xmlns:ns27="http://www.aduana.cl/xml/esquemas/PAGODIFERIDO" xmlns:ns28="http://www.aduana.cl/xml/esquemas/FECHAVENCCUOTA" xmlns:ns29="http://www.aduana.cl/xml/esquemas/CUOTA" xmlns:ns3="http://www.aduana.cl/xml/esquemas/CABEZA" xmlns:ns30="http://www.aduana.cl/xml/esquemas/MONTOCUOTA" xmlns:ns31="http://www.aduana.cl/xml/esquemas/CUOTAS" xmlns:ns32="http://www.aduana.cl/xml/esquemas/ANEXASDIN" xmlns:ns33="http://www.aduana.cl/xml/esquemas/ERRORES" xmlns:ns34="http://www.aduana.cl/xml/esquemas/ERROR" xmlns:ns35="http://www.w3.org/2000/09/xmldsig#" xmlns:ns36="http://www.aduana.cl/xml/esquemas/EnvioDin" xmlns:ns4="http://www.aduana.cl/xml/esquemas/IDENTIFICACION" xmlns:ns5="http://www.aduana.cl/xml/esquemas/REGIMENSUSPENSIVO" xmlns:ns6="http://www.aduana.cl/xml/esquemas/ORIGENTRANSPALMACENAJE" xmlns:ns7="http://www.aduana.cl/xml/esquemas/ANTECEDENTESFINANCIEROS" xmlns:ns8="http://www.aduana.cl/xml/esquemas/TOTALES" xmlns:ns9="http://www.aduana.cl/xml/esquemas/RESPUESTA">
+         <ns36:TIPOENVIO>{{ din.tipoenvio }}</ns36:TIPOENVIO>
+         <ns36:LOG>
+            <ns2:SECUENCIA>{{ din.log.secuencia }}</ns2:SECUENCIA>
+            <ns2:ADUANA>{{ din.log.aduana }}</ns2:ADUANA>
+            <ns2:SOBRE>{{ din.log.sobre }}</ns2:SOBRE>
+            <ns2:FECHA>{{ din.log.fecha }}</ns2:FECHA>
+            <ns2:HORA>{{ din.log.hora }}</ns2:HORA>
+            <ns2:VAN>{{ din.log.van }}</ns2:VAN>
+            <ns2:ORIGEN>{{ din.log.origen }}</ns2:ORIGEN>
+            <ns2:DESTINO>{{ din.log.destino }}</ns2:DESTINO>
+         </ns36:LOG>
+         <ns36:CABEZA>
+            <ns3:FORM>{{ din.cabeza.form }}</ns3:FORM>
+            <ns3:NUMIDENTIF>{{ din.cabeza.numidentif }}</ns3:NUMIDENTIF>
+            <ns3:FECVENCI>{{ din.cabeza.fecvenci }}</ns3:FECVENCI>
+            <ns3:ADU>{{ din.cabeza.adu }}</ns3:ADU>
+            <ns3:AGENTE>{{ din.cabeza.agente }}</ns3:AGENTE>
+            <ns3:TPODOCTO>{{ din.cabeza.tpodocto }}</ns3:TPODOCTO>
+            <ns3:TIPOINGR>{{ din.cabeza.tipoingr }}</ns3:TIPOINGR>
+            <ns3:NUMAUT>{{ din.cabeza.numaut }}</ns3:NUMAUT>
+            <ns3:FECAUT>{{ din.cabeza.fecaut }}</ns3:FECAUT>
+            <ns3:GBCOCEN>{{ din.cabeza.gbcocen }}</ns3:GBCOCEN>
+            <ns3:FECTRA>{{ din.cabeza.fectra }}</ns3:FECTRA>
+            <ns3:FECACEP>{{ din.cabeza.fecacep }}</ns3:FECACEP>
+            <ns3:AFORO>{{ din.cabeza.aforo }}</ns3:AFORO>
+            <ns3:FECCONFDI>{{ din.cabeza.fecconfdi }}</ns3:FECCONFDI>
+            <ns3:NUMENCRIP>{{ din.cabeza.numencrip }}</ns3:NUMENCRIP>
+            <ns3:FECCONFEC>{{ din.cabeza.fecconfec }}</ns3:FECCONFEC>
+            <ns3:NUMIDENACL>{{ din.cabeza.numidenacl }}</ns3:NUMIDENACL>
+            <ns3:NUMRES>{{ din.cabeza.numres }}</ns3:NUMRES>
+            <ns3:FECRES>{{ din.cabeza.fecres }}</ns3:FECRES>
+            <ns3:IDENTIFICACION>
+               <ns4:NOMBRE>{{ din.cabeza.identificacion.nombre }}</ns4:NOMBRE>
+               <ns4:DIREC>{{ din.cabeza.identificacion.direc }}</ns4:DIREC>
+               <ns4:CODCOMUN>{{ din.cabeza.identificacion.codcomun }}</ns4:CODCOMUN>
+               <ns4:TIPRUT>{{ din.cabeza.identificacion.tiprut }}</ns4:TIPRUT>
+               <ns4:RUT>{{ din.cabeza.identificacion.rut }}</ns4:RUT>
+               <ns4:DVRUT>{{ din.cabeza.identificacion.dvrut }}</ns4:DVRUT>
+               <ns4:NOMREPLEG>{{ din.cabeza.identificacion.nomrepleg }}</ns4:NOMREPLEG>
+               <ns4:NUMRUTRL>{{ din.cabeza.identificacion.numrutrl }}</ns4:NUMRUTRL>
+               <ns4:DIGVERRL>{{ din.cabeza.identificacion.digverrl }}</ns4:DIGVERRL>
+               <ns4:NOMCONSIG>{{ din.cabeza.identificacion.nomconsig }}</ns4:NOMCONSIG>
+               <ns4:DESDIRCON>{{ din.cabeza.identificacion.desdircon }}</ns4:DESDIRCON>
+               <ns4:CODPAISCON>{{ din.cabeza.identificacion.codpaiscon }}</ns4:CODPAISCON>
+            </ns3:IDENTIFICACION>
+            <ns3:REGIMENSUSPENSIVO>
+               <ns5:DESDIRALM>{{ din.cabeza.regimensuspensivo.desdiralm }}</ns5:DESDIRALM>
+               <ns5:CODCOMRS>{{ din.cabeza.regimensuspensivo.codcomrs }}</ns5:CODCOMRS>
+               <ns5:ADUCTROL>{{ din.cabeza.regimensuspensivo.aductrol }}</ns5:ADUCTROL>
+               <ns5:NUMPLAZO>{{ din.cabeza.regimensuspensivo.numplazo }}</ns5:NUMPLAZO>
+               <ns5:INDPARCIAL>{{ din.cabeza.regimensuspensivo.indparcial }}</ns5:INDPARCIAL>
+               <ns5:NUMHOJINS>{{ din.cabeza.regimensuspensivo.numhojins }}</ns5:NUMHOJINS>
+               <ns5:TOTINSUM>{{ din.cabeza.regimensuspensivo.totinsum }}</ns5:TOTINSUM>
+               <ns5:CODALMA>{{ din.cabeza.regimensuspensivo.codalma }}</ns5:CODALMA>
+               <ns5:NUMRS>{{ din.cabeza.regimensuspensivo.numrs }}</ns5:NUMRS>
+               <ns5:FECRS>{{ din.cabeza.regimensuspensivo.fecrs }}</ns5:FECRS>
+               <ns5:ADUARS>{{ din.cabeza.regimensuspensivo.aduars }}</ns5:ADUARS>
+               <ns5:NUMHOJANE>{{ din.cabeza.regimensuspensivo.numhojane }}</ns5:NUMHOJANE>
+               <ns5:NUMSEC>{{ din.cabeza.regimensuspensivo.numsec }}</ns5:NUMSEC>
+            </ns3:REGIMENSUSPENSIVO>
+            <ns3:ORIGENTRANSPALMACENAJE>
+               <ns6:PAORIG>{{ din.cabeza.origentranspalmacenaje.paorig }}</ns6:PAORIG>
+               <ns6:GPAORIG>{{ din.cabeza.origentranspalmacenaje.gpaorig }}</ns6:GPAORIG>
+               <ns6:PAADQ>{{ din.cabeza.origentranspalmacenaje.paadq }}</ns6:PAADQ>
+               <ns6:GPAADQ>{{ din.cabeza.origentranspalmacenaje.gpaadq }}</ns6:GPAADQ>
+               <ns6:VIATRAN>{{ din.cabeza.origentranspalmacenaje.viatran }}</ns6:VIATRAN>
+               <ns6:DESPUERT>{{ din.cabeza.origentranspalmacenaje.despuert }}</ns6:DESPUERT>
+               <ns6:TRANSB>{{ din.cabeza.origentranspalmacenaje.transb }}</ns6:TRANSB>
+               <ns6:PTOEMB>{{ din.cabeza.origentranspalmacenaje.ptoemb }}</ns6:PTOEMB>
+               <ns6:GPTODESEM>{{ din.cabeza.origentranspalmacenaje.gptodesem }}</ns6:GPTODESEM>
+               <ns6:PTODESEM>{{ din.cabeza.origentranspalmacenaje.ptodesem }}</ns6:PTODESEM>
+               <ns6:TPOCARGA>{{ din.cabeza.origentranspalmacenaje.tpocarga }}</ns6:TPOCARGA>
+               <ns6:DESALMAC>{{ din.cabeza.origentranspalmacenaje.desalmac }}</ns6:DESALMAC>
+               <ns6:ALMACEN>{{ din.cabeza.origentranspalmacenaje.almacen }}</ns6:ALMACEN>
+               <ns6:FECALMAC>{{ din.cabeza.origentranspalmacenaje.fecalmac }}</ns6:FECALMAC>
+               <ns6:FECRETIRO>{{ din.cabeza.origentranspalmacenaje.fecretiro }}</ns6:FECRETIRO>
+               <ns6:GNOMCIAT>{{ din.cabeza.origentranspalmacenaje.gnomciat }}</ns6:GNOMCIAT>
+               <ns6:CODPAISCIA>{{ din.cabeza.origentranspalmacenaje.codpaiscia }}</ns6:CODPAISCIA>
+               <ns6:NUMRUTCIA>{{ din.cabeza.origentranspalmacenaje.numrutcia }}</ns6:NUMRUTCIA>
+               <ns6:DIGVERCIA>{{ din.cabeza.origentranspalmacenaje.digvercia }}</ns6:DIGVERCIA>
+               <ns6:NUMMANIF>{{ din.cabeza.origentranspalmacenaje.nummanif }}</ns6:NUMMANIF>
+               <ns6:NUMMANIF1>{{ din.cabeza.origentranspalmacenaje.nummanif1 }}</ns6:NUMMANIF1>
+               <ns6:NUMMANIF2>{{ din.cabeza.origentranspalmacenaje.nummanif2 }}</ns6:NUMMANIF2>
+               <ns6:FECMANIF>{{ din.cabeza.origentranspalmacenaje.fecmanif }}</ns6:FECMANIF>
+               <ns6:NUMCONOC>{{ din.cabeza.origentranspalmacenaje.numconoc }}</ns6:NUMCONOC>
+               <ns6:FECCONOC>{{ din.cabeza.origentranspalmacenaje.fecconoc }}</ns6:FECCONOC>
+               <ns6:NOMEMISOR>{{ din.cabeza.origentranspalmacenaje.nomemisor }}</ns6:NOMEMISOR>
+               <ns6:NUMRUTEMI>{{ din.cabeza.origentranspalmacenaje.numrutemi }}</ns6:NUMRUTEMI>
+               <ns6:DIGVEREMI>{{ din.cabeza.origentranspalmacenaje.digveremi }}</ns6:DIGVEREMI>
+            </ns3:ORIGENTRANSPALMACENAJE>
+            <ns3:ANTECEDENTESFINANCIEROS>
+               <ns7:GREGIMP>{{ din.cabeza.antecedentesfinancieros.gregimp }}</ns7:GREGIMP>
+               <ns7:REGIMP>{{ din.cabeza.antecedentesfinancieros.regimp }}</ns7:REGIMP>
+               <ns7:BCOCOM>{{ din.cabeza.antecedentesfinancieros.bcocom }}</ns7:BCOCOM>
+               <ns7:CODORDIV>{{ din.cabeza.antecedentesfinancieros.codordiv }}</ns7:CODORDIV>
+               <ns7:FORMPAGO>{{ din.cabeza.antecedentesfinancieros.formpago }}</ns7:FORMPAGO>
+               <ns7:NUMDIAS>{{ din.cabeza.antecedentesfinancieros.numdias }}</ns7:NUMDIAS>
+               <ns7:VALEXFAB>{{ din.cabeza.antecedentesfinancieros.valexfab }}</ns7:VALEXFAB>
+               <ns7:MONEDA>{{ din.cabeza.antecedentesfinancieros.moneda }}</ns7:MONEDA>
+               <ns7:MONGASFOB>{{ din.cabeza.antecedentesfinancieros.mongasfob }}</ns7:MONGASFOB>
+               <ns7:CLCOMPRA>{{ din.cabeza.antecedentesfinancieros.clcompra }}</ns7:CLCOMPRA>
+               <ns7:PAGOGRAV>{{ din.cabeza.antecedentesfinancieros.pagograv }}</ns7:PAGOGRAV>
+            </ns3:ANTECEDENTESFINANCIEROS>
+            <ns3:TOTALES>
+               <ns8:TOTITEMS>{{ din.cabeza.totales.totitems }}</ns8:TOTITEMS>
+               <ns8:FOB>{{ din.cabeza.totales.fob }}</ns8:FOB>
+               <ns8:TOTHOJAS>{{ din.cabeza.totales.tothojas }}</ns8:TOTHOJAS>
+               <ns8:CODFLE>{{ din.cabeza.totales.codfle }}</ns8:CODFLE>
+               <ns8:FLETE>{{ din.cabeza.totales.flete }}</ns8:FLETE>
+               <ns8:TOTBULTOS>{{ din.cabeza.totales.totbultos }}</ns8:TOTBULTOS>
+               <ns8:CODSEG>{{ din.cabeza.totales.codseg }}</ns8:CODSEG>
+               <ns8:SEGURO>{{ din.cabeza.totales.seguro }}</ns8:SEGURO>
+               <ns8:TOTPESO>{{ din.cabeza.totales.totpeso }}</ns8:TOTPESO>
+               <ns8:CIF>{{ din.cabeza.totales.cif }}</ns8:CIF>
+            </ns3:TOTALES>
+            <ns3:RESPUESTA>
+               <ns9:FECHACEPTACION>{{ din.cabeza.respuesta.fechaceptacion }}</ns9:FECHACEPTACION>
+               <ns9:NUMEROENCRIPTADO>{{ din.cabeza.respuesta.numeroencriptado }}</ns9:NUMEROENCRIPTADO>
+               <ns9:ESTADO>{{ din.cabeza.respuesta.estado }}</ns9:ESTADO>
+               {% if din.cabeza.respuesta.tiposeleccion %}<ns9:TIPOSELECCION>{{ din.cabeza.respuesta.tiposeleccion }}</ns9:TIPOSELECCION>{% endif %}
+            </ns3:RESPUESTA>
+         </ns36:CABEZA>
+         <ns36:ITEMS>
+            {% for item in din.items_list %}
+            <ns19:ITEM>
+               <ns10:NUMITEM>{{ item.numitem }}</ns10:NUMITEM>
+               <ns10:DNOMBRE>{{ item.dnombre }}</ns10:DNOMBRE>
+               <ns10:DMARCA>{{ item.dmarca }}</ns10:DMARCA>
+               <ns10:DVARIEDAD>{{ item.dvariedad }}</ns10:DVARIEDAD>
+               <ns10:DOTRO1>{{ item.dotro1 }}</ns10:DOTRO1>
+               <ns10:DOTRO2>{{ item.dotro2 }}</ns10:DOTRO2>
+               <ns10:ATR5>{{ item.atr5 }}</ns10:ATR5>
+               <ns10:ATR6>{{ item.atr6 }}</ns10:ATR6>
+               <ns10:SAJUITEM>{{ item.sajuitem }}</ns10:SAJUITEM>
+               <ns10:AJUITEM>{{ item.ajuitem }}</ns10:AJUITEM>
+               <ns10:CANTMERC>{{ item.cantmerc }}</ns10:CANTMERC>
+               <ns10:MEDIDA>{{ item.medida }}</ns10:MEDIDA>
+               <ns10:CODESTUM>{{ item.codestum }}</ns10:CODESTUM>
+               <ns10:PREUNIT>{{ item.preunit }}</ns10:PREUNIT>
+               <ns10:ARANCALA>{{ item.arancala }}</ns10:ARANCALA>
+               <ns10:NUMCOR>{{ item.numcor }}</ns10:NUMCOR>
+               <ns10:NUMACU>{{ item.numacu }}</ns10:NUMACU>
+               <ns10:CONCUPO>{{ item.concupo }}</ns10:CONCUPO>
+               <ns10:ARANCNAC>{{ item.arancnac }}</ns10:ARANCNAC>
+               <ns10:CIFITEM>{{ item.cifitem }}</ns10:CIFITEM>
+               <ns10:ADVALALA>{{ item.advalala }}</ns10:ADVALALA>
+               <ns10:ADVAL>{{ item.adval }}</ns10:ADVAL>
+               <ns10:VALAD>{{ item.valad }}</ns10:VALAD>
+               <ns10:OBSERVACIONESITEM>
+                  {% for obs in item.observacionesitem %}
+                  <ns12:OBSERVACIONITEM>
+                     <ns11:CODOBS>{{ obs.codobs }}</ns11:CODOBS>
+                     <ns11:DESOBS>{{ obs.desobs }}</ns11:DESOBS>
+                  </ns12:OBSERVACIONITEM>
+                  {% endfor %}
+               </ns10:OBSERVACIONESITEM>
+               <ns10:CUENTASITEM>
+                  {% for cuenta in item.cuentasitem %}
+                  <ns14:CUENTAITEM>
+                     <ns13:OTRO>{{ cuenta.otro }}</ns13:OTRO>
+                     <ns13:CTA>{{ cuenta.cta }}</ns13:CTA>
+                     <ns13:SIGVAL>{{ cuenta.sigval }}</ns13:SIGVAL>
+                     <ns13:VALOR>{{ cuenta.valor }}</ns13:VALOR>
+                  </ns14:CUENTAITEM>
+                  {% endfor %}
+               </ns10:CUENTASITEM>
+               <ns10:INSUMOS>
+                  {% for insumo in item.insumos %}
+                  <ns16:INSUMO>
+                     <ns15:NUMITEM>{{ insumo.numitem }}</ns15:NUMITEM>
+                     <ns15:NUMINSUMO>{{ insumo.numinsumo }}</ns15:NUMINSUMO>
+                     <ns15:DESINSUMO>{{ insumo.desinsumo }}</ns15:DESINSUMO>
+                     <ns15:CANINSUMO>{{ insumo.caninsumo }}</ns15:CANINSUMO>
+                     <ns15:CODMEDIDA>{{ insumo.codmedida }}</ns15:CODMEDIDA>
+                     <ns15:CIFINSUMO>{{ insumo.cifinsumo }}</ns15:CIFINSUMO>
+                  </ns16:INSUMO>
+                  {% endfor %}
+               </ns10:INSUMOS>
+               <ns10:ANEXAS>
+                  {% for anexa in item.anexas %}
+                  <ns18:ANEXA>
+                     <ns17:NUMSEC>{{ anexa.numsec }}</ns17:NUMSEC>
+                     <ns17:NUMDAPEX>{{ anexa.numdapex }}</ns17:NUMDAPEX>
+                     <ns17:FECDAPEX>{{ anexa.fecdapex }}</ns17:FECDAPEX>
+                     <ns17:CODADUANA>{{ anexa.codaduana }}</ns17:CODADUANA>
+                     <ns17:NUMITEM>{{ anexa.numitem }}</ns17:NUMITEM>
+                     <ns17:NUMINSUMO>{{ anexa.numinsumo }}</ns17:NUMINSUMO>
+                     <ns17:NOMINSUMO>{{ anexa.nominsumo }}</ns17:NOMINSUMO>
+                     <ns17:CODUNMEDI>{{ anexa.codunmedi }}</ns17:CODUNMEDI>
+                     <ns17:NUMITEMDEC>{{ anexa.numitemdec }}</ns17:NUMITEMDEC>
+                     <ns17:NOMPRODUCTO>{{ anexa.nomproducto }}</ns17:NOMPRODUCTO>
+                     <ns17:CANPRODUCTO>{{ anexa.canproducto }}</ns17:CANPRODUCTO>
+                     <ns17:CODUNMEDP>{{ anexa.codunmedp }}</ns17:CODUNMEDP>
+                     <ns17:FACCONSUMO>{{ anexa.facconsumo }}</ns17:FACCONSUMO>
+                     <ns17:NUMINSUTI>{{ anexa.numinsuti }}</ns17:NUMINSUTI>
+                  </ns18:ANEXA>
+                  {% endfor %}
+               </ns10:ANEXAS>
+            </ns19:ITEM>
+            {% endfor %}
+         </ns36:ITEMS>
+         <ns36:VISTOSBUENOS>
+            {% for vb in din.vistosbuenos %}
+            <ns21:VISTOBUENO>
+               <ns20:NUREGR>{{ vb.nuregr }}</ns20:NUREGR>
+               <ns20:ANOREG>{{ vb.anoreg }}</ns20:ANOREG>
+               <ns20:CODVISBUEN>{{ vb.codvisbuen }}</ns20:CODVISBUEN>
+               <ns20:NUMREGLA>{{ vb.numregla }}</ns20:NUMREGLA>
+               <ns20:NUMANORES>{{ vb.numanores }}</ns20:NUMANORES>
+               <ns20:CODULTVB>{{ vb.codultvb }}</ns20:CODULTVB>
+            </ns21:VISTOBUENO>
+            {% endfor %}
+         </ns36:VISTOSBUENOS>
+         <ns36:BULTOS>
+            <ns22:IDBULTOS>{{ din.bultos.idbultos }}</ns22:IDBULTOS>
+            {% for bulto in din.bultos.bultos %}
+            <ns22:BULTO>
+               <ns23:DESTIPBUL>{{ bulto.destipbul }}</ns23:DESTIPBUL>
+               <ns23:TPOBUL>{{ bulto.tpobul }}</ns23:TPOBUL>
+               <ns23:CANTBUL>{{ bulto.cantbul }}</ns23:CANTBUL>
+            </ns22:BULTO>
+            {% endfor %}
+         </ns36:BULTOS>
+         <ns36:CUENTASYVALORES>
+            <ns24:MON178>{{ din.cuentasyvalores.mon178 }}</ns24:MON178>
+            <ns24:MON191>{{ din.cuentasyvalores.mon191 }}</ns24:MON191>
+            <ns24:MON699>{{ din.cuentasyvalores.mon699 }}</ns24:MON699>
+            <ns24:MON199>{{ din.cuentasyvalores.mon199 }}</ns24:MON199>
+            <ns24:CUENTASGIRO>
+               {% for cg in din.cuentasyvalores.cuentasgiro %}
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>{{ cg.ctaotro }}</ns25:CTAOTRO>
+                  <ns25:MONOTRO>{{ cg.monotro }}</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               {% endfor %}
+            </ns24:CUENTASGIRO>
+         </ns36:CUENTASYVALORES>
+         {% if din.pagodiferido %}
+         <ns36:PAGODIFERIDO>
+            <ns27:TASA>{{ din.pagodiferido.tasa }}</ns27:TASA>
+            <ns27:NCUOTAS>{{ din.pagodiferido.ncuotas }}</ns27:NCUOTAS>
+            <ns27:ADUDI>{{ din.pagodiferido.adudi }}</ns27:ADUDI>
+            <ns27:NUMDI>{{ din.pagodiferido.numdi }}</ns27:NUMDI>
+            <ns27:FECDI>{{ din.pagodiferido.fecdi }}</ns27:FECDI>
+            {% if din.pagodiferido.cuotas %}
+            <ns27:CUOTAS>
+               {% for cuota in din.pagodiferido.cuotas %}
+               <ns31:CUOTA>
+                  {% for fvc in cuota.fechavenccuota %}
+                  <ns29:FECHAVENCCUOTA>
+                     <ns28:FECHA>{{ fvc.fecha }}</ns28:FECHA>
+                     <ns28:CODFECHA>{{ fvc.codfecha }}</ns28:CODFECHA>
+                  </ns29:FECHAVENCCUOTA>
+                  {% endfor %}
+                  {% for mc in cuota.montocuota %}
+                  <ns29:MONTOCUOTA>
+                     <ns30:VALOR>{{ mc.valor }}</ns30:VALOR>
+                     <ns30:CODVALOR>{{ mc.codvalor }}</ns30:CODVALOR>
+                  </ns29:MONTOCUOTA>
+                  {% endfor %}
+               </ns31:CUOTA>
+               {% endfor %}
+            </ns27:CUOTAS>
+            {% endif %}
+         </ns36:PAGODIFERIDO>
+         {% endif %}
+         {% if din.anexasdin %}
+         <ns36:ANEXASDIN>
+            {% for anexa in din.anexasdin %}
+            <ns32:ANEXA>
+               <ns17:NUMSEC>{{ anexa.numsec }}</ns17:NUMSEC>
+               <ns17:NUMDAPEX>{{ anexa.numdapex }}</ns17:NUMDAPEX>
+               <ns17:FECDAPEX>{{ anexa.fecdapex }}</ns17:FECDAPEX>
+               <ns17:CODADUANA>{{ anexa.codaduana }}</ns17:CODADUANA>
+               <ns17:NUMITEM>{{ anexa.numitem }}</ns17:NUMITEM>
+               <ns17:NUMINSUMO>{{ anexa.numinsumo }}</ns17:NUMINSUMO>
+               <ns17:NOMINSUMO>{{ anexa.nominsumo }}</ns17:NOMINSUMO>
+               <ns17:CODUNMEDI>{{ anexa.codunmedi }}</ns17:CODUNMEDI>
+               <ns17:NUMITEMDEC>{{ anexa.numitemdec }}</ns17:NUMITEMDEC>
+               <ns17:NOMPRODUCTO>{{ anexa.nomproducto }}</ns17:NOMPRODUCTO>
+               <ns17:CANPRODUCTO>{{ anexa.canproducto }}</ns17:CANPRODUCTO>
+               <ns17:CODUNMEDP>{{ anexa.codunmedp }}</ns17:CODUNMEDP>
+               <ns17:FACCONSUMO>{{ anexa.facconsumo }}</ns17:FACCONSUMO>
+               <ns17:NUMINSUTI>{{ anexa.numinsuti }}</ns17:NUMINSUTI>
+            </ns32:ANEXA>
+            {% endfor %}
+         </ns36:ANEXASDIN>
+         {% endif %}
+         <ns36:ERRORES>
+            <ns33:FECHAPROCESO>{{ din.errores.fechaproceso }}</ns33:FECHAPROCESO>
+            {% for error in din.errores.errores %}
+            <ns33:ERROR>
+               <ns34:CODIGO>{{ error.codigo }}</ns34:CODIGO>
+               <ns34:GLOSA>{{ error.glosa }}</ns34:GLOSA>
+            </ns33:ERROR>
+            {% endfor %}
+         </ns36:ERRORES>
+      </DIN>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,18 @@
+services:
+  din-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: din-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./certs:/app/certs:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

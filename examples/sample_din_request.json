@@ -1,0 +1,224 @@
+{
+  "DIN": {
+    "TIPOENVIO": "DIN",
+    "LOG": {
+      "SECUENCIA": "1",
+      "ADUANA": "39",
+      "SOBRE": "G02A0812094027",
+      "FECHA": "12082024",
+      "HORA": "094027",
+      "VAN": "VANADU",
+      "ORIGEN": "LEON VALENZ",
+      "DESTINO": "ADUAN"
+    },
+    "CABEZA": {
+      "FORM": "15",
+      "NUMIDENTIF": "5020496917",
+      "FECVENCI": "27082024",
+      "ADU": "39",
+      "AGENTE": "G02",
+      "TPODOCTO": "151",
+      "TIPOINGR": "N",
+      "NUMAUT": "999",
+      "FECAUT": "",
+      "GBCOCEN": "DEC. ORIGEN EN FACTURA  333537   DE FECHA 28-06-2024 PENNINE      (M)HLCULIV240665639              (H)SFUEXPJ14895                  SE APLICA RES. EX. 5449/30.05.13",
+      "FECTRA": "12082024",
+      "FECACEP": "12082024",
+      "AFORO": "00",
+      "FECCONFDI": "09082024",
+      "NUMENCRIP": "43284851",
+      "FECCONFEC": "09082024",
+      "NUMIDENACL": "",
+      "NUMRES": "00000000",
+      "FECRES": "00000000",
+      "IDENTIFICACION": {
+        "NOMBRE": "DIPROMED S.A",
+        "DIREC": "PALACIO RIESCO 4331",
+        "CODCOMUN": "13107",
+        "TIPRUT": "03",
+        "RUT": "86397000",
+        "DVRUT": "8",
+        "NOMREPLEG": "RODOLFO POSTIGO C.",
+        "NUMRUTRL": "7573258",
+        "DIGVERRL": "9",
+        "NOMCONSIG": "PENNINE HEALTHCARE",
+        "DESDIRCON": "ASCOR DR.DERBY DE 24",
+        "CODPAISCON": "510"
+      },
+      "REGIMENSUSPENSIVO": {
+        "DESDIRALM": "",
+        "CODCOMRS": "00000",
+        "ADUCTROL": "00",
+        "NUMPLAZO": "00000000",
+        "INDPARCIAL": "0",
+        "NUMHOJINS": "000",
+        "TOTINSUM": "0000000.0000",
+        "CODALMA": "000",
+        "NUMRS": "0000000000",
+        "FECRS": "",
+        "ADUARS": "00",
+        "NUMHOJANE": "000",
+        "NUMSEC": "00000"
+      },
+      "ORIGENTRANSPALMACENAJE": {
+        "PAORIG": "510",
+        "GPAORIG": "REINO UNIDO",
+        "PAADQ": "510",
+        "GPAADQ": "REINO UNIDO",
+        "VIATRAN": "01",
+        "DESPUERT": "LONDRES",
+        "TRANSB": "",
+        "PTOEMB": "572",
+        "GPTODESEM": "SAN ANTONIO",
+        "PTODESEM": "906",
+        "TPOCARGA": "R",
+        "DESALMAC": "",
+        "ALMACEN": "",
+        "FECALMAC": "",
+        "FECRETIRO": "",
+        "GNOMCIAT": "HAPAG LLOYD",
+        "CODPAISCIA": "563",
+        "NUMRUTCIA": "76380217",
+        "DIGVERCIA": "5",
+        "NUMMANIF": "246711",
+        "NUMMANIF1": "",
+        "NUMMANIF2": "",
+        "FECMANIF": "",
+        "NUMCONOC": "LCULIV240665639(H)SFUEXPJ14896",
+        "FECCONOC": "06072024",
+        "NOMEMISOR": "AIRSEALOG",
+        "NUMRUTEMI": "76006532",
+        "DIGVEREMI": "3"
+      },
+      "ANTECEDENTESFINANCIEROS": {
+        "GREGIMP": "AACH-RU",
+        "REGIMP": "52",
+        "BCOCOM": "00",
+        "CODORDIV": "0",
+        "FORMPAGO": "01",
+        "NUMDIAS": "0030",
+        "VALEXFAB": "0000000585.13",
+        "MONEDA": "102",
+        "MONGASFOB": "0000000061.61",
+        "CLCOMPRA": "3",
+        "PAGOGRAV": "04"
+      },
+      "TOTALES": {
+        "TOTITEMS": "001",
+        "FOB": "00000000646.74",
+        "TOTHOJAS": "001",
+        "CODFLE": "0",
+        "FLETE": "00000000039.74",
+        "TOTBULTOS": "000001",
+        "CODSEG": "0",
+        "SEGURO": "00000000001.23",
+        "TOTPESO": "0000000090.60",
+        "CIF": "00000000687.71"
+      },
+      "RESPUESTA": {
+        "FECHACEPTACION": "12082024",
+        "NUMEROENCRIPTADO": "43284851",
+        "ESTADO": "ACEPTADO",
+        "TIPOSELECCION": "00"
+      }
+    },
+    "ITEMS": {
+      "ITEM": [
+        {
+          "NUMITEM": "001",
+          "DNOMBRE": "SINCODIGO       ; CANULAS; PENNINE-F; DE CAUCHO VU",
+          "DMARCA": "LCANIZADO RIGIDO; DISPOSITIVO",
+          "DVARIEDAD": "DE SUCCION; PARA USO MEDICO",
+          "DOTRO1": "",
+          "DOTRO2": "",
+          "ATR5": "",
+          "ATR6": "",
+          "SAJUITEM": "",
+          "AJUITEM": "0000000000.00",
+          "CANTMERC": "00001300.0000",
+          "MEDIDA": "10",
+          "CODESTUM": "",
+          "PREUNIT": "00000000.497492",
+          "ARANCALA": "90183990",
+          "NUMCOR": "0",
+          "NUMACU": "832",
+          "CONCUPO": "0",
+          "ARANCNAC": "90183990",
+          "CIFITEM": "0000000687.71",
+          "ADVALALA": "0000.00",
+          "ADVAL": "223",
+          "VALAD": "0000000000.00",
+          "OBSERVACIONESITEM": {
+            "OBSERVACIONITEM": [
+              {
+                "CODOBS": "99",
+                "DESOBS": "00001300.000000 UNIDADES"
+              },
+              {
+                "CODOBS": "61",
+                "DESOBS": "1300000067338202412"
+              }
+            ]
+          },
+          "CUENTASITEM": {
+            "CUENTAITEM": [
+              {
+                "OTRO": "0019.000000",
+                "CTA": "178",
+                "SIGVAL": "+",
+                "VALOR": "0000000130.66"
+              }
+            ]
+          },
+          "INSUMOS": {},
+          "ANEXAS": {}
+        }
+      ]
+    },
+    "VISTOSBUENOS": {
+      "VISTOBUENO": [
+        {
+          "NUREGR": "000000",
+          "ANOREG": "0000",
+          "CODVISBUEN": "0",
+          "NUMREGLA": "0000000000000",
+          "NUMANORES": "0000",
+          "CODULTVB": "000"
+        }
+      ]
+    },
+    "BULTOS": {
+      "IDBULTOS": "FCIU 422625-4                                                     SON 10 PALLETS (80) EN CONTENEDOR                                 PARA AMBOS DESPACHOS PARCIALES                                    PARCIAL 1/2 2590,53 K. B.",
+      "BULTO": [
+        {
+          "DESTIPBUL": "CONT40",
+          "TPOBUL": "074",
+          "CANTBUL": "000001"
+        }
+      ]
+    },
+    "CUENTASYVALORES": {
+      "MON178": "0000000130.66",
+      "MON191": "0000000130.66",
+      "MON699": "0000000000.00",
+      "MON199": "0000000000.00",
+      "CUENTASGIRO": {
+        "CUENTAGIRO": [
+          {"CTAOTRO": "223", "MONOTRO": "0000000000.00"},
+          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
+          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
+          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
+          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
+          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
+          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
+          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"}
+        ]
+      }
+    },
+    "ANEXASDIN": {},
+    "ERRORES": {
+      "FECHAPROCESO": "",
+      "ERROR": []
+    }
+  }
+}
