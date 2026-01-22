@@ -1,5 +1,0 @@
-litestar
-uvicorn
-pydantic
-pydantic-xml[lxml]
-lxml

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header />
+   <soapenv:Body>
+      <DIN xmlns:ns10="http://www.aduana.cl/xml/esquemas/ITEM" xmlns:ns11="http://www.aduana.cl/xml/esquemas/OBSERVACIONITEM" xmlns:ns12="http://www.aduana.cl/xml/esquemas/OBSERVACIONESITEM" xmlns:ns13="http://www.aduana.cl/xml/esquemas/CUENTAITEM" xmlns:ns14="http://www.aduana.cl/xml/esquemas/CUENTASITEM" xmlns:ns15="http://www.aduana.cl/xml/esquemas/INSUMO" xmlns:ns16="http://www.aduana.cl/xml/esquemas/INSUMOS" xmlns:ns17="http://www.aduana.cl/xml/esquemas/ANEXA" xmlns:ns18="http://www.aduana.cl/xml/esquemas/ANEXAS" xmlns:ns19="http://www.aduana.cl/xml/esquemas/ITEMS" xmlns:ns2="http://www.aduana.cl/xml/esquemas/LOG" xmlns:ns20="http://www.aduana.cl/xml/esquemas/VISTOBUENO" xmlns:ns21="http://www.aduana.cl/xml/esquemas/VISTOSBUENOS" xmlns:ns22="http://www.aduana.cl/xml/esquemas/BULTOS" xmlns:ns23="http://www.aduana.cl/xml/esquemas/BULTO" xmlns:ns24="http://www.aduana.cl/xml/esquemas/CUENTASYVALORES" xmlns:ns25="http://www.aduana.cl/xml/esquemas/CUENTAGIRO" xmlns:ns26="http://www.aduana.cl/xml/esquemas/CUENTASGIRO" xmlns:ns27="http://www.aduana.cl/xml/esquemas/PAGODIFERIDO" xmlns:ns28="http://www.aduana.cl/xml/esquemas/FECHAVENCCUOTA" xmlns:ns29="http://www.aduana.cl/xml/esquemas/CUOTA" xmlns:ns3="http://www.aduana.cl/xml/esquemas/CABEZA" xmlns:ns30="http://www.aduana.cl/xml/esquemas/MONTOCUOTA" xmlns:ns31="http://www.aduana.cl/xml/esquemas/CUOTAS" xmlns:ns32="http://www.aduana.cl/xml/esquemas/ANEXASDIN" xmlns:ns33="http://www.aduana.cl/xml/esquemas/ERRORES" xmlns:ns34="http://www.aduana.cl/xml/esquemas/ERROR" xmlns:ns35="http://www.w3.org/2000/09/xmldsig#" xmlns:ns36="http://www.aduana.cl/xml/esquemas/EnvioDin" xmlns:ns4="http://www.aduana.cl/xml/esquemas/IDENTIFICACION" xmlns:ns5="http://www.aduana.cl/xml/esquemas/REGIMENSUSPENSIVO" xmlns:ns6="http://www.aduana.cl/xml/esquemas/ORIGENTRANSPALMACENAJE" xmlns:ns7="http://www.aduana.cl/xml/esquemas/ANTECEDENTESFINANCIEROS" xmlns:ns8="http://www.aduana.cl/xml/esquemas/TOTALES" xmlns:ns9="http://www.aduana.cl/xml/esquemas/RESPUESTA">
+         <ns36:TIPOENVIO>DIN</ns36:TIPOENVIO>
+         <ns36:LOG>
+            <ns2:SECUENCIA>1</ns2:SECUENCIA>
+            <ns2:ADUANA>39</ns2:ADUANA>
+            <ns2:SOBRE>G02A0812094027</ns2:SOBRE>
+            <ns2:FECHA>12082024</ns2:FECHA>
+            <ns2:HORA>094027</ns2:HORA>
+            <ns2:VAN>VANADU</ns2:VAN>
+            <ns2:ORIGEN>LEON VALENZ</ns2:ORIGEN>
+            <ns2:DESTINO>ADUAN</ns2:DESTINO>
+         </ns36:LOG>
+         <ns36:CABEZA>
+            <ns3:FORM>15</ns3:FORM>
+            <ns3:NUMIDENTIF>5020496917</ns3:NUMIDENTIF>
+            <ns3:FECVENCI>27082024</ns3:FECVENCI>
+            <ns3:ADU>39</ns3:ADU>
+            <ns3:AGENTE>G02</ns3:AGENTE>
+            <ns3:TPODOCTO>151</ns3:TPODOCTO>
+            <ns3:TIPOINGR>N</ns3:TIPOINGR>
+            <ns3:NUMAUT>999</ns3:NUMAUT>
+            <ns3:FECAUT />
+            <ns3:GBCOCEN>DEC. ORIGEN EN FACTURA  333537   DE FECHA 28-06-2024 PENNINE      (M)HLCULIV240665639              (H)SFUEXPJ14895                  SE APLICA RES. EX. 5449/30.05.13</ns3:GBCOCEN>
+            <ns3:FECTRA>12082024</ns3:FECTRA>
+            <ns3:FECACEP>12082024</ns3:FECACEP>
+            <ns3:AFORO>00</ns3:AFORO>
+            <ns3:FECCONFDI>09082024</ns3:FECCONFDI>
+            <ns3:NUMENCRIP>43284851</ns3:NUMENCRIP>
+            <ns3:FECCONFEC>09082024</ns3:FECCONFEC>
+            <ns3:NUMIDENACL />
+            <ns3:NUMRES>00000000</ns3:NUMRES>
+            <ns3:FECRES>00000000</ns3:FECRES>
+            <ns3:IDENTIFICACION>
+               <ns4:NOMBRE>DIPROMED S.A</ns4:NOMBRE>
+               <ns4:DIREC>PALACIO RIESCO 4331</ns4:DIREC>
+               <ns4:CODCOMUN>13107</ns4:CODCOMUN>
+               <ns4:TIPRUT>03</ns4:TIPRUT>
+               <ns4:RUT>86397000</ns4:RUT>
+               <ns4:DVRUT>8</ns4:DVRUT>
+               <ns4:NOMREPLEG>RODOLFO POSTIGO C.</ns4:NOMREPLEG>
+               <ns4:NUMRUTRL>7573258</ns4:NUMRUTRL>
+               <ns4:DIGVERRL>9</ns4:DIGVERRL>
+               <ns4:NOMCONSIG>PENNINE HEALTHCARE</ns4:NOMCONSIG>
+               <ns4:DESDIRCON>ASCOR DR.DERBY DE 24</ns4:DESDIRCON>
+               <ns4:CODPAISCON>510</ns4:CODPAISCON>
+            </ns3:IDENTIFICACION>
+            <ns3:REGIMENSUSPENSIVO>
+               <ns5:DESDIRALM />
+               <ns5:CODCOMRS>00000</ns5:CODCOMRS>
+               <ns5:ADUCTROL>00</ns5:ADUCTROL>
+               <ns5:NUMPLAZO>00000000</ns5:NUMPLAZO>
+               <ns5:INDPARCIAL>0</ns5:INDPARCIAL>
+               <ns5:NUMHOJINS>000</ns5:NUMHOJINS>
+               <ns5:TOTINSUM>0000000.0000</ns5:TOTINSUM>
+               <ns5:CODALMA>000</ns5:CODALMA>
+               <ns5:NUMRS>0000000000</ns5:NUMRS>
+               <ns5:FECRS />
+               <ns5:ADUARS>00</ns5:ADUARS>
+               <ns5:NUMHOJANE>000</ns5:NUMHOJANE>
+               <ns5:NUMSEC>00000</ns5:NUMSEC>
+            </ns3:REGIMENSUSPENSIVO>
+            <ns3:ORIGENTRANSPALMACENAJE>
+               <ns6:PAORIG>510</ns6:PAORIG>
+               <ns6:GPAORIG>REINO UNIDO</ns6:GPAORIG>
+               <ns6:PAADQ>510</ns6:PAADQ>
+               <ns6:GPAADQ>REINO UNIDO</ns6:GPAADQ>
+               <ns6:VIATRAN>01</ns6:VIATRAN>
+               <ns6:DESPUERT>LONDRES</ns6:DESPUERT>
+               <ns6:TRANSB />
+               <ns6:PTOEMB>572</ns6:PTOEMB>
+               <ns6:GPTODESEM>SAN ANTONIO</ns6:GPTODESEM>
+               <ns6:PTODESEM>906</ns6:PTODESEM>
+               <ns6:TPOCARGA>R</ns6:TPOCARGA>
+               <ns6:DESALMAC />
+               <ns6:ALMACEN />
+               <ns6:FECALMAC />
+               <ns6:FECRETIRO />
+               <ns6:GNOMCIAT>HAPAG LLOYD</ns6:GNOMCIAT>
+               <ns6:CODPAISCIA>563</ns6:CODPAISCIA>
+               <ns6:NUMRUTCIA>76380217</ns6:NUMRUTCIA>
+               <ns6:DIGVERCIA>5</ns6:DIGVERCIA>
+               <ns6:NUMMANIF>246711</ns6:NUMMANIF>
+               <ns6:NUMMANIF1 />
+               <ns6:NUMMANIF2 />
+               <ns6:FECMANIF />
+               <ns6:NUMCONOC>LCULIV240665639(H)SFUEXPJ14896</ns6:NUMCONOC>
+               <ns6:FECCONOC>06072024</ns6:FECCONOC>
+               <ns6:NOMEMISOR>AIRSEALOG</ns6:NOMEMISOR>
+               <ns6:NUMRUTEMI>76006532</ns6:NUMRUTEMI>
+               <ns6:DIGVEREMI>3</ns6:DIGVEREMI>
+            </ns3:ORIGENTRANSPALMACENAJE>
+            <ns3:ANTECEDENTESFINANCIEROS>
+               <ns7:GREGIMP>AACH-RU</ns7:GREGIMP>
+               <ns7:REGIMP>52</ns7:REGIMP>
+               <ns7:BCOCOM>00</ns7:BCOCOM>
+               <ns7:CODORDIV>0</ns7:CODORDIV>
+               <ns7:FORMPAGO>01</ns7:FORMPAGO>
+               <ns7:NUMDIAS>0030</ns7:NUMDIAS>
+               <ns7:VALEXFAB>0000000585.13</ns7:VALEXFAB>
+               <ns7:MONEDA>102</ns7:MONEDA>
+               <ns7:MONGASFOB>0000000061.61</ns7:MONGASFOB>
+               <ns7:CLCOMPRA>3</ns7:CLCOMPRA>
+               <ns7:PAGOGRAV>04</ns7:PAGOGRAV>
+            </ns3:ANTECEDENTESFINANCIEROS>
+            <ns3:TOTALES>
+               <ns8:TOTITEMS>001</ns8:TOTITEMS>
+               <ns8:FOB>00000000646.74</ns8:FOB>
+               <ns8:TOTHOJAS>001</ns8:TOTHOJAS>
+               <ns8:CODFLE>0</ns8:CODFLE>
+               <ns8:FLETE>00000000039.74</ns8:FLETE>
+               <ns8:TOTBULTOS>000001</ns8:TOTBULTOS>
+               <ns8:CODSEG>0</ns8:CODSEG>
+               <ns8:SEGURO>00000000001.23</ns8:SEGURO>
+               <ns8:TOTPESO>0000000090.60</ns8:TOTPESO>
+               <ns8:CIF>00000000687.71</ns8:CIF>
+            </ns3:TOTALES>
+            <ns3:RESPUESTA>
+               <ns9:FECHACEPTACION>12082024</ns9:FECHACEPTACION>
+               <ns9:NUMEROENCRIPTADO>43284851</ns9:NUMEROENCRIPTADO>
+               <ns9:ESTADO>ACEPTADO</ns9:ESTADO>
+               <ns9:TIPOSELECCION>00</ns9:TIPOSELECCION>
+            </ns3:RESPUESTA>
+         </ns36:CABEZA>
+         <ns36:ITEMS>
+            <ns19:ITEM>
+               <ns10:NUMITEM>001</ns10:NUMITEM>
+               <ns10:DNOMBRE>SINCODIGO       ; CANULAS; PENNINE-F; DE CAUCHO VU</ns10:DNOMBRE>
+               <ns10:DMARCA>LCANIZADO RIGIDO; DISPOSITIVO</ns10:DMARCA>
+               <ns10:DVARIEDAD>DE SUCCION; PARA USO MEDICO</ns10:DVARIEDAD>
+               <ns10:DOTRO1 />
+               <ns10:DOTRO2 />
+               <ns10:ATR5 />
+               <ns10:ATR6 />
+               <ns10:SAJUITEM />
+               <ns10:AJUITEM>0000000000.00</ns10:AJUITEM>
+               <ns10:CANTMERC>00001300.0000</ns10:CANTMERC>
+               <ns10:MEDIDA>10</ns10:MEDIDA>
+               <ns10:CODESTUM />
+               <ns10:PREUNIT>00000000.497492</ns10:PREUNIT>
+               <ns10:ARANCALA>90183990</ns10:ARANCALA>
+               <ns10:NUMCOR>0</ns10:NUMCOR>
+               <ns10:NUMACU>832</ns10:NUMACU>
+               <ns10:CONCUPO>0</ns10:CONCUPO>
+               <ns10:ARANCNAC>90183990</ns10:ARANCNAC>
+               <ns10:CIFITEM>0000000687.71</ns10:CIFITEM>
+               <ns10:ADVALALA>0000.00</ns10:ADVALALA>
+               <ns10:ADVAL>223</ns10:ADVAL>
+               <ns10:VALAD>0000000000.00</ns10:VALAD>
+               <ns10:OBSERVACIONESITEM>
+                  <ns12:OBSERVACIONITEM>
+                     <ns11:CODOBS>99</ns11:CODOBS>
+                     <ns11:DESOBS>00001300.000000 UNIDADES</ns11:DESOBS>
+                  </ns12:OBSERVACIONITEM>
+                  <ns12:OBSERVACIONITEM>
+                     <ns11:CODOBS>61</ns11:CODOBS>
+                     <ns11:DESOBS>1300000067338202412</ns11:DESOBS>
+                  </ns12:OBSERVACIONITEM>
+               </ns10:OBSERVACIONESITEM>
+               <ns10:CUENTASITEM>
+                  <ns14:CUENTAITEM>
+                     <ns13:OTRO>0019.000000</ns13:OTRO>
+                     <ns13:CTA>178</ns13:CTA>
+                     <ns13:SIGVAL>+</ns13:SIGVAL>
+                     <ns13:VALOR>0000000130.66</ns13:VALOR>
+                  </ns14:CUENTAITEM>
+               </ns10:CUENTASITEM>
+               <ns10:INSUMOS />
+               <ns10:ANEXAS />
+            </ns19:ITEM>
+         </ns36:ITEMS>
+         <ns36:VISTOSBUENOS>
+            <ns21:VISTOBUENO>
+               <ns20:NUREGR>000000</ns20:NUREGR>
+               <ns20:ANOREG>0000</ns20:ANOREG>
+               <ns20:CODVISBUEN>0</ns20:CODVISBUEN>
+               <ns20:NUMREGLA>0000000000000</ns20:NUMREGLA>
+               <ns20:NUMANORES>0000</ns20:NUMANORES>
+               <ns20:CODULTVB>000</ns20:CODULTVB>
+            </ns21:VISTOBUENO>
+         </ns36:VISTOSBUENOS>
+         <ns36:BULTOS>
+            <ns22:IDBULTOS>FCIU 422625-4                                                     SON 10 PALLETS (80) EN CONTENEDOR                                 PARA AMBOS DESPACHOS PARCIALES                                    PARCIAL 1/2 2590,53 K. B.</ns22:IDBULTOS>
+            <ns22:BULTO>
+               <ns23:DESTIPBUL>CONT40</ns23:DESTIPBUL>
+               <ns23:TPOBUL>074</ns23:TPOBUL>
+               <ns23:CANTBUL>000001</ns23:CANTBUL>
+            </ns22:BULTO>
+         </ns36:BULTOS>
+         <ns36:CUENTASYVALORES>
+            <ns24:MON178>0000000130.66</ns24:MON178>
+            <ns24:MON191>0000000130.66</ns24:MON191>
+            <ns24:MON699>0000000000.00</ns24:MON699>
+            <ns24:MON199>0000000000.00</ns24:MON199>
+            <ns24:CUENTASGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>223</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>000</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>000</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>000</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>000</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>000</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>000</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+               <ns26:CUENTAGIRO>
+                  <ns25:CTAOTRO>000</ns25:CTAOTRO>
+                  <ns25:MONOTRO>0000000000.00</ns25:MONOTRO>
+               </ns26:CUENTAGIRO>
+            </ns24:CUENTASGIRO>
+         </ns36:CUENTASYVALORES>
+         <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+               <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+               <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+               <Reference URI="">
+                  <Transforms>
+                     <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                  </Transforms>
+                  <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                  <DigestValue>+9QeYaSPZFnD8Z4ml66iCyGLs9c=</DigestValue>
+               </Reference>
+            </SignedInfo>
+            <SignatureValue>TAVKV8LgEJVwPz4vHgvOPdryujYWGYODu6EBl1TjPxCziFea5hv0kIdZ0Yg8dxt6SvSEQHhbN+0mqDFVRmCjqU3tSsW1BliTb+5C/Z1Rsq4cIFipqPmQ4JAQucbLga272jB4uq1tzwODYzUxiOcvccaX+0K2l+fPP9Bq1eYB1ZA7stc0e7Su0KQGsq82W/fm5Wd+1hFEj1CR88DuAfkNmMBQUyy02nL/Kl9LxUecOGqY6vxv6hHucSGyLif2qhL5r6OaQB5ap00OXRzmVVIjB/k6yzCMNeujUELpwVt7EnegGxK5SM93roB4t1CTuAJV8AV/Dv+dcuoiWqK4yKflNQ==</SignatureValue>
+            <KeyInfo>
+               <X509Data>
+                  <X509Certificate>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</X509Certificate>
+               </X509Data>
+               <KeyValue>
+                  <RSAKeyValue>
+                     <Modulus>0rMtTxCMHGWkB6OSp9RUnUzXzio9ivdVpB9T11K9QWH9uskrOr05Uqhm7LLT4KzH+PwLGuotTvQtav1TJrryqYf4ECn3nlnNjp8Y5LqnR6E+3O0mGRpeBHOisPlhvyEDsyxsBsUG6p2aNMVv38GG3V0nF+X5RrXxVT3CzCJh5VsMhT52qJEhJGxs+EVE1XQUjs6eQHL30UCkp7BBcn24F4mBdxsSYhUmM9a4DbjD/mp7x6CbKfhh9vkYcOEyhfeIOtOl4oZ53OigvXP52h8Casc55zE6fZxvBRTZUw5z0RVBmJQim9ybAArB+l/uMaslhChLuZRbU51t99EXpKh7ww==</Modulus>
+                     <Exponent>AQAB</Exponent>
+                  </RSAKeyValue>
+               </KeyValue>
+            </KeyInfo>
+         </Signature>
+      </DIN>
+   </soapenv:Body>
+</soapenv:Envelope>
