@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/RESPUESTA" xmlns:tns="http://www.aduana.cl/xml/esquemas/RESPUESTA" elementFormDefault="qualified">
+
+    <complexType name="RESPUESTA">
+    	<sequence>
+    		<element name="FECHACEPTACION" type="string"></element>
+    		<element name="NUMEROENCRIPTADO" type="string"></element>
+    		<element name="ESTADO" type="string"></element>
+    		<element name="TIPOSELECCION" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,6 +1,0 @@
-from pydantic import BaseModel, Field
-from typing import List, Optional
-from pydantic_xml import BaseXmlModel, element, attr
-
-class ObjectType(BaseXmlModel):
-    pass

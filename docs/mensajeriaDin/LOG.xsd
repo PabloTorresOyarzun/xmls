@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/LOG" xmlns:tns="http://www.aduana.cl/xml/esquemas/LOG" elementFormDefault="qualified">
+
+    <complexType name="LOG">
+    	<sequence>
+    		<element name="SECUENCIA" type="string"></element>
+    		<element name="ADUANA" type="string"></element>
+    		<element name="SOBRE" type="string"></element>
+    		<element name="FECHA" type="string"></element>
+    		<element name="HORA" type="string"></element>
+    		<element name="VAN" type="string"></element>
+    		<element name="ORIGEN" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DESTINO" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

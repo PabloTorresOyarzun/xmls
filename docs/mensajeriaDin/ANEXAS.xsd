@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/ANEXAS" xmlns:tns="http://www.aduana.cl/xml/esquemas/ANEXAS" elementFormDefault="qualified" xmlns:Q1="http://www.aduana.cl/xml/esquemas/ANEXA">
+
+    <import schemaLocation="ANEXA.xsd" namespace="http://www.aduana.cl/xml/esquemas/ANEXA"></import>
+    <complexType name="ANEXAS">
+    	<sequence>
+    		<element name="ANEXA" type="Q1:ANEXA" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

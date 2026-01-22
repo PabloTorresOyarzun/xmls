@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/CUENTASGIRO"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/CUENTASGIRO"
+	elementFormDefault="qualified" xmlns:pref="http://www.aduana.cl/xml/esquemas/CUENTAGIRO">
+
+	<import schemaLocation="CUENTAGIRO.xsd" namespace="http://www.aduana.cl/xml/esquemas/CUENTAGIRO"></import>
+	<complexType name="CUENTASGIRO">
+		<sequence>
+			<element name="CUENTAGIRO" type="pref:CUENTAGIRO" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

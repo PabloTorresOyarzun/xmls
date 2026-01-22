@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/REGIMENSUSPENSIVO" xmlns:tns="http://www.aduana.cl/xml/esquemas/REGIMENSUSPENSIVO" elementFormDefault="qualified">
+
+    <complexType name="REGIMENSUSPENSIVO">
+    	<sequence>
+    		<element name="DESDIRALM" type="string"></element>
+    		<element name="CODCOMRS" type="string"></element>
+    		<element name="ADUCTROL" type="string"></element>
+            <element name="NUMPLAZO" type="string"></element>
+            <element name="INDPARCIAL" type="string"></element>
+            <element name="NUMHOJINS" type="string"></element>
+            <element name="TOTINSUM" type="string"></element>
+            <element name="CODALMA" type="string"></element>
+            <element name="NUMRS" type="string"></element>
+            <element name="FECRS" type="string"></element>
+            <element name="ADUARS" type="string"></element>
+            <element name="NUMHOJANE" type="string"></element>
+            <element name="NUMSEC" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

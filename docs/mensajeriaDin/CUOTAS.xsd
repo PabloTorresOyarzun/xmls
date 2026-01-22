@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="1.0" targetNamespace="http://www.aduana.cl/xml/esquemas/CUOTAS" xmlns:ns1="http://www.aduana.cl/xml/esquemas/CUOTA" xmlns="http://www.w3.org/2001/XMLSchema">
+
+  <import namespace="http://www.aduana.cl/xml/esquemas/CUOTA" schemaLocation="CUOTA.xsd"/>
+
+  <complexType name="CUOTAS">
+    <sequence>
+      <element name="CUOTA" type="ns1:CUOTA" form="qualified" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+</schema>
+

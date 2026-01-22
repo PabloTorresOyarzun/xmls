@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/BULTOS" xmlns:tns="http://www.aduana.cl/xml/esquemas/BULTOS" elementFormDefault="qualified" xmlns:Q1="http://www.aduana.cl/xml/esquemas/BULTO">
+
+    <import schemaLocation="BULTO.xsd" namespace="http://www.aduana.cl/xml/esquemas/BULTO"></import>
+    <complexType name="BULTOS">
+    	<sequence>
+    		<element name="IDBULTOS" type="string"></element>
+    		<element name="BULTO" type="Q1:BULTO" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="www.aduana.cl/xml/esquemas/INSUMOS"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/INSUMOS"
+	elementFormDefault="qualified" xmlns:pref="http://www.aduana.cl/xml/esquemas/INSUMO">
+
+	<import schemaLocation="INSUMO.xsd" namespace="http://www.aduana.cl/xml/esquemas/INSUMO"></import>
+	<complexType name="INSUMOS">
+		<sequence>
+			<element name="INSUMO" type="pref:INSUMO" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

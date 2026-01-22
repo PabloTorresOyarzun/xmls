@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/INSUMO" xmlns:tns="http://www.aduana.cl/xml/esquemas/INSUMO" elementFormDefault="qualified">
+
+    <complexType name="INSUMO">
+    	<sequence>
+    		<element name="NUMITEM" type="string"></element>
+    		<element name="NUMINSUMO" type="string"></element>
+    		<element name="DESINSUMO" type="string"></element>
+    		<element name="CANINSUMO" type="string"></element>
+    		<element name="CODMEDIDA" type="string"></element>
+    		<element name="CIFINSUMO" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

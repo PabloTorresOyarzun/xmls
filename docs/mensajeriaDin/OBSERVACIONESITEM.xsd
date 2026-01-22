@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/OBSERVACIONESITEM"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/OBSERVACIONESITEM"
+	elementFormDefault="qualified"
+	xmlns:pref="http://www.aduana.cl/xml/esquemas/OBSERVACIONITEM">
+
+	<import schemaLocation="OBSERVACIONITEM.xsd" namespace="http://www.aduana.cl/xml/esquemas/OBSERVACIONITEM"></import>
+	<complexType name="OBSERVACIONESITEM">
+		<sequence>
+			<element name="OBSERVACIONITEM" type="pref:OBSERVACIONITEM"
+				maxOccurs="unbounded" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+</schema>

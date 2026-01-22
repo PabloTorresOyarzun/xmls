@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/VISTOSBUENOS" xmlns:tns="http://www.aduana.cl/xml/esquemas/VISTOSBUENOS" elementFormDefault="qualified" xmlns:Q1="http://www.aduana.cl/xml/esquemas/VISTOBUENO">
+
+    <import schemaLocation="VISTOBUENO.xsd" namespace="http://www.aduana.cl/xml/esquemas/VISTOBUENO"></import>
+    <complexType name="VISTOSBUENOS">
+    	<sequence>
+    		<element name="VISTOBUENO" type="Q1:VISTOBUENO" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

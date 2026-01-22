@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/ITEM"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/ITEM"
+	elementFormDefault="qualified"
+	xmlns:pref="http://www.aduana.cl/xml/esquemas/OBSERVACIONESITEM"
+	xmlns:pref1="http://www.aduana.cl/xml/esquemas/CUENTASITEM"
+	xmlns:pref2="http://www.aduana.cl/xml/esquemas/ANEXAS" xmlns:pref3="www.aduana.cl/xml/esquemas/INSUMOS">
+
+
+
+	<import schemaLocation="OBSERVACIONESITEM.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/OBSERVACIONESITEM">
+	</import>
+
+	<import schemaLocation="CUENTASITEM.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/CUENTASITEM">
+	</import>
+
+	<import schemaLocation="ANEXAS.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/ANEXAS">
+	</import>
+
+	<import schemaLocation="INSUMOS.xsd" namespace="www.aduana.cl/xml/esquemas/INSUMOS"></import>
+
+	
+	<complexType name="ITEM">
+		<sequence>
+			<element name="NUMITEM" type="string"></element>
+			<element name="DNOMBRE" type="string"></element>
+			<element name="DMARCA" type="string"></element>
+			<element name="DVARIEDAD" type="string"></element>
+			<element name="DOTRO1" type="string"></element>
+			<element name="DOTRO2" type="string"></element>
+			<element name="ATR5" type="string"></element>
+			<element name="ATR6" type="string"></element>
+			<element name="SAJUITEM" type="string"></element>
+			<element name="AJUITEM" type="string"></element>
+			<element name="CANTMERC" type="string"></element>
+			<element name="MEDIDA" type="string"></element>
+			<element name="CODESTUM" type="string"></element>
+			<element name="PREUNIT" type="string"></element>
+			<element name="ARANCALA" type="string"></element>
+			<element name="NUMCOR" type="string"></element>
+			<element name="NUMACU" type="string"></element>
+			<element name="CONCUPO" type="string"></element>
+			<element name="ARANCNAC" type="string"></element>
+			<element name="CIFITEM" type="string"></element>
+			<element name="ADVALALA" type="string"></element>
+			<element name="ADVAL" type="string"></element>
+			<element name="VALAD" type="string"></element>
+			<element name="OBSERVACIONESITEM" type="pref:OBSERVACIONESITEM">
+			</element>
+			<element name="CUENTASITEM" type="pref1:CUENTASITEM"></element>
+			<element name="INSUMOS" type="pref3:INSUMOS"></element>
+			<element name="ANEXAS" type="pref2:ANEXAS"></element>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema version="1.0" targetNamespace="http://www.aduana.cl/xml/esquemas/MONTOCUOTA" xmlns="http://www.w3.org/2001/XMLSchema">
+
+  <complexType name="MONTOCUOTA">
+    <sequence>
+      <element name="VALOR" type="string" form="qualified"/>
+      <element name="CODVALOR" type="string" form="qualified"/>
+    </sequence>
+  </complexType>
+</schema>
+

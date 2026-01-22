@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/CUENTASITEM"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/CUENTASITEM"
+	elementFormDefault="qualified"
+	xmlns:pref="http://www.aduana.cl/xml/esquemas/CUENTAITEM"
+	xmlns:pref1="http://www.aduana.cl/xml/esquemas/CUENTAITEM">
+
+	<import schemaLocation="CUENTAITEM.xsd" namespace="http://www.aduana.cl/xml/esquemas/CUENTAITEM"></import>
+	<complexType name="CUENTASITEM">
+		<sequence>
+			<element name="CUENTAITEM" type="pref:CUENTAITEM" maxOccurs="unbounded" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+</schema>

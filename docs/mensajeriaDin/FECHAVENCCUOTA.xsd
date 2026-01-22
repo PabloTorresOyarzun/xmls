@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema version="1.0" targetNamespace="http://www.aduana.cl/xml/esquemas/FECHAVENCCUOTA" xmlns="http://www.w3.org/2001/XMLSchema">
+
+  <complexType name="FECHAVENCCUOTA">
+    <sequence>
+      <element name="FECHA" type="string" form="qualified"/>
+      <element name="CODFECHA" type="string" form="qualified"/>
+    </sequence>
+  </complexType>
+</schema>
+

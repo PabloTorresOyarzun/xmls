@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/IDENTIFICACION" xmlns:tns="http://www.aduana.cl/xml/esquemas/IDENTIFICACION" elementFormDefault="qualified">
+
+    <complexType name="IDENTIFICACION">
+    	<sequence>
+    		<element name="NOMBRE" type="string"></element>
+    		<element name="DIREC" type="string"></element>
+			<element name="CODCOMUN" type="string"></element>
+			<element name="TIPRUT" type="string"></element>
+			<element name="RUT" type="string"></element>
+			<element name="DVRUT" type="string"></element>
+			<element name="NOMREPLEG" type="string"></element>
+			<element name="NUMRUTRL" type="string"></element>
+			<element name="DIGVERRL" type="string"></element>
+			<element name="NOMCONSIG" type="string"></element>
+			<element name="DESDIRCON" type="string"></element>
+			<element name="CODPAISCON" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

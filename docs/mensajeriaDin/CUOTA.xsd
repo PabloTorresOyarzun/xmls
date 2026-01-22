@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema version="1.0" targetNamespace="http://www.aduana.cl/xml/esquemas/CUOTA" xmlns:ns2="http://www.aduana.cl/xml/esquemas/MONTOCUOTA" xmlns:ns1="http://www.aduana.cl/xml/esquemas/FECHAVENCCUOTA" xmlns="http://www.w3.org/2001/XMLSchema">
+
+  <import namespace="http://www.aduana.cl/xml/esquemas/FECHAVENCCUOTA" schemaLocation="FECHAVENCCUOTA.xsd"/>
+
+  <import namespace="http://www.aduana.cl/xml/esquemas/MONTOCUOTA" schemaLocation="MONTOCUOTA.xsd"/>
+
+  <complexType name="CUOTA">
+    <sequence>
+      <element name="FECHAVENCCUOTA" type="ns1:FECHAVENCCUOTA" form="qualified" maxOccurs="unbounded"/>
+      <element name="MONTOCUOTA" type="ns2:MONTOCUOTA" form="qualified" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+</schema>
+

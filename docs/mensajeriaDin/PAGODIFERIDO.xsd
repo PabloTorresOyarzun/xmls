@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/PAGODIFERIDO" xmlns:tns="http://www.aduana.cl/xml/esquemas/PAGODIFERIDO" elementFormDefault="qualified" xmlns:Q1="http://www.aduana.cl/xml/esquemas/CUOTAS">
+
+	<import namespace="http://www.aduana.cl/xml/esquemas/CUOTAS" schemaLocation="CUOTAS.xsd"/>
+	
+    <complexType name="PAGODIFERIDO">
+    	<sequence>
+    		<element name="TASA" type="string"></element>
+    		<element name="NCUOTAS" type="string"></element>
+    		<element name="ADUDI" type="string"></element>
+    		<element name="NUMDI" type="string"></element>
+    		<element name="FECDI" type="string"></element>
+			<element name="CUOTAS" type="Q1:CUOTAS" form="qualified" minOccurs="0"/>				
+    	</sequence>
+    </complexType>
+</schema>

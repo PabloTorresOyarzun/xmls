@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/OBSERVACIONITEM" xmlns:tns="http://www.aduana.cl/xml/esquemas/OBSERVACIONITEM" elementFormDefault="qualified">
+
+    <complexType name="OBSERVACIONITEM">
+    	<sequence>
+    		<element name="CODOBS" type="string"></element>
+    		<element name="DESOBS" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

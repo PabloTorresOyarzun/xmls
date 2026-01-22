@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/BULTO" xmlns:tns="http://www.aduana.cl/xml/esquemas/BULTO" elementFormDefault="qualified">
+
+    <complexType name="BULTO">
+    	<sequence>
+    		<element name="DESTIPBUL" type="string"></element>
+    		<element name="TPOBUL" type="string"></element>
+    		<element name="CANTBUL" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

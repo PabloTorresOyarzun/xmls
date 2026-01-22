@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/ERROR" xmlns:tns="http://www.aduana.cl/xml/esquemas/ERROR" elementFormDefault="qualified">
+
+    <complexType name="ERROR">
+    	<sequence>
+    		<element name="CODIGO" type="string"></element>
+    		<element name="GLOSA" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

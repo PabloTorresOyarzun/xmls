@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/CUENTAGIRO" xmlns:tns="http://www.aduana.cl/xml/esquemas/CUENTAGIRO" elementFormDefault="qualified">
+
+    <complexType name="CUENTAGIRO">
+    	<sequence>
+    		<element name="CTAOTRO" type="string"></element>
+    		<element name="MONOTRO" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/CABEZA"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/CABEZA"
+	elementFormDefault="qualified"
+	xmlns:pref="http://www.aduana.cl/xml/esquemas/IDENTIFICACION"
+	xmlns:pref1="http://www.aduana.cl/xml/esquemas/REGIMENSUSPENSIVO"
+	xmlns:pref2="http://www.aduana.cl/xml/esquemas/ORIGENTRANSPALMACENAJE"
+	xmlns:pref3="http://www.aduana.cl/xml/esquemas/ANTECEDENTESFINANCIEROS"
+	xmlns:pref4="http://www.aduana.cl/xml/esquemas/TOTALES"
+	xmlns:pref5="http://www.aduana.cl/xml/esquemas/RESPUESTA"
+	xmlns:pref6="http://www.aduana.cl/xml/esquemas/REGIMENSUSPENSIVO">
+
+	<import schemaLocation="ORIGENTRANSPALMACENAJE.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/ORIGENTRANSPALMACENAJE">
+	</import>
+	<import schemaLocation="ANTECEDENTESFINANCIEROS.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/ANTECEDENTESFINANCIEROS">
+	</import>
+	<import schemaLocation="TOTALES.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/TOTALES">
+	</import>
+	<import schemaLocation="RESPUESTA.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/RESPUESTA">
+	</import>
+	<import schemaLocation="REGIMENSUSPENSIVO.xsd"
+		namespace="http://www.aduana.cl/xml/esquemas/REGIMENSUSPENSIVO">
+	</import>
+	<import schemaLocation="IDENTIFICACION.xsd" namespace="http://www.aduana.cl/xml/esquemas/IDENTIFICACION"></import>
+	<complexType name="CABEZA">
+		<sequence>
+			<element name="FORM" type="string"></element>
+			<element name="NUMIDENTIF" type="string"></element>
+			<element name="FECVENCI" type="string"></element>
+			<element name="ADU" type="string"></element>
+			<element name="AGENTE" type="string"></element>
+			<element name="TPODOCTO" type="string"></element>
+			<element name="TIPOINGR" type="string"></element>
+			<element name="NUMAUT" type="string"></element>
+			<element name="FECAUT" type="string"></element>
+			<element name="GBCOCEN" type="string"></element>
+			<element name="FECTRA" type="string"></element>
+			<element name="FECACEP" type="string"></element>
+			<element name="AFORO" type="string"></element>
+			<element name="FECCONFDI" type="string"></element>
+			<element name="NUMENCRIP" type="string"></element>
+			<element name="FECCONFEC" type="string"></element>
+			<element name="NUMIDENACL" type="string"></element>
+			<element name="NUMRES" type="string"></element>
+			<element name="FECRES" type="string"></element>
+			<element name="IDENTIFICACION" type="pref:IDENTIFICACION"></element>
+			<element name="REGIMENSUSPENSIVO"
+				type="pref1:REGIMENSUSPENSIVO">
+			</element>
+			<element name="ORIGENTRANSPALMACENAJE"
+				type="pref2:ORIGENTRANSPALMACENAJE">
+			</element>
+			<element name="ANTECEDENTESFINANCIEROS"
+				type="pref3:ANTECEDENTESFINANCIEROS">
+			</element>
+			<element name="TOTALES" type="pref4:TOTALES"></element>
+			<element name="RESPUESTA" type="pref5:RESPUESTA"></element>
+		</sequence>
+	</complexType>
+</schema>

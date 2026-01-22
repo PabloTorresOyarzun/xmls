@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/ANEXA" xmlns:tns="http://www.aduana.cl/xml/esquemas/ANEXA" elementFormDefault="qualified">
+
+    <complexType name="ANEXA">
+    	<sequence>
+    		<element name="NUMSEC" type="string"></element>
+    		<element name="NUMDAPEX" type="string"></element>
+    		<element name="FECDAPEX" type="string"></element>
+    		<element name="CODADUANA" type="string"></element>
+    		<element name="NUMITEM" type="string"></element>
+    		<element name="NUMINSUMO" type="string"></element>
+    		<element name="NOMINSUMO" type="string"></element>
+    		<element name="CODUNMEDI" type="string"></element>
+    		<element name="NUMITEMDEC" type="string"></element>
+    		<element name="NOMPRODUCTO" type="string"></element>
+    		<element name="CANPRODUCTO" type="string"></element>
+    		<element name="CODUNMEDP" type="string"></element>
+    		<element name="FACCONSUMO" type="string"></element>
+    		<element name="NUMINSUTI" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

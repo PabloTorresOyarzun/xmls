@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/ANEXASDIN"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/ANEXASDIN"
+	elementFormDefault="qualified" xmlns:pref="http://www.aduana.cl/xml/esquemas/ANEXA">
+
+	<import schemaLocation="ANEXA.xsd" namespace="http://www.aduana.cl/xml/esquemas/ANEXA"></import>
+	<complexType name="ANEXASDIN">
+		<sequence>
+			<element name="ANEXA" type="pref:ANEXA" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/CUENTASYVALORES"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/CUENTASYVALORES"
+	elementFormDefault="qualified" xmlns:pref="http://www.aduana.cl/xml/esquemas/CUENTASGIRO">
+
+	<import schemaLocation="CUENTASGIRO.xsd" namespace="http://www.aduana.cl/xml/esquemas/CUENTASGIRO"></import>
+	<complexType name="CUENTASYVALORES">
+		<sequence>
+			<element name="MON178" type="string"></element>
+			<element name="MON191" type="string"></element>
+			<element name="MON699" type="string"></element>
+			<element name="MON199" type="string"></element>
+			<element name="CUENTASGIRO" type="pref:CUENTASGIRO"></element>
+		</sequence>
+	</complexType>
+</schema>

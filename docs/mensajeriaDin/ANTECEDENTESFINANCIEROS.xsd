@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/ANTECEDENTESFINANCIEROS" xmlns:tns="http://www.aduana.cl/xml/esquemas/ANTECEDENTESFINANCIEROS" elementFormDefault="qualified">
+
+    <complexType name="ANTECEDENTESFINANCIEROS">
+    	<sequence>
+    		<element name="GREGIMP" type="string"></element>
+    		<element name="REGIMP" type="string"></element>
+			<element name="BCOCOM" type="string"></element>
+			<element name="CODORDIV" type="string"></element>
+			<element name="FORMPAGO" type="string"></element>
+			<element name="NUMDIAS" type="string"></element>
+			<element name="VALEXFAB" type="string"></element>
+			<element name="MONEDA" type="string"></element>
+			<element name="MONGASFOB" type="string"></element>
+			<element name="CLCOMPRA" type="string"></element>
+			<element name="PAGOGRAV" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

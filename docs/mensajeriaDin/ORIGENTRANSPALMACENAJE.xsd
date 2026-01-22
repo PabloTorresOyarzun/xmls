@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/ORIGENTRANSPALMACENAJE" xmlns:tns="http://www.aduana.cl/xml/esquemas/ORIGENTRANSPALMACENAJE" elementFormDefault="qualified">
+
+    <complexType name="ORIGENTRANSPALMACENAJE">
+    	<sequence>
+    		<element name="PAORIG" type="string"></element>
+    		<element name="GPAORIG" type="string"></element>
+			<element name="PAADQ" type="string"></element>
+			<element name="GPAADQ" type="string"></element>
+			<element name="VIATRAN" type="string"></element>
+			<element name="DESPUERT" type="string"></element>
+			<element name="TRANSB" type="string"></element>
+			<element name="PTOEMB" type="string"></element>
+			<element name="GPTODESEM" type="string"></element>
+			<element name="PTODESEM" type="string"></element>
+			<element name="TPOCARGA" type="string"></element>
+			<element name="DESALMAC" type="string"></element>
+			<element name="ALMACEN" type="string"></element>
+			<element name="FECALMAC" type="string"></element>
+			<element name="FECRETIRO" type="string"></element>
+			<element name="GNOMCIAT" type="string"></element>
+			<element name="CODPAISCIA" type="string"></element>
+			<element name="NUMRUTCIA" type="string"></element>
+			<element name="DIGVERCIA" type="string"></element>
+			<element name="NUMMANIF" type="string"></element>
+			<element name="NUMMANIF1" type="string"></element>
+			<element name="NUMMANIF2" type="string"></element>
+			<element name="FECMANIF" type="string"></element>
+			<element name="NUMCONOC" type="string"></element>
+			<element name="FECCONOC" type="string"></element>
+			<element name="NOMEMISOR" type="string"></element>
+			<element name="NUMRUTEMI" type="string"></element>
+			<element name="DIGVEREMI" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

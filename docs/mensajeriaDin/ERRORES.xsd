@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/ERRORES"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/ERRORES"
+	elementFormDefault="qualified" xmlns:pref="http://www.aduana.cl/xml/esquemas/ERROR">
+
+	<import schemaLocation="ERROR.xsd" namespace="http://www.aduana.cl/xml/esquemas/ERROR"></import>
+	<complexType name="ERRORES">
+		<sequence>
+			<element name="FECHAPROCESO" type="string"></element>
+			<element name="ERROR" type="pref:ERROR" maxOccurs="unbounded" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+</schema>

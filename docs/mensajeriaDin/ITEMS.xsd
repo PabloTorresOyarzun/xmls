@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.aduana.cl/xml/esquemas/ITEMS"
+	xmlns:tns="http://www.aduana.cl/xml/esquemas/ITEMS"
+	elementFormDefault="qualified" xmlns:pref="http://www.aduana.cl/xml/esquemas/ITEM">
+
+	<import schemaLocation="ITEM.xsd" namespace="http://www.aduana.cl/xml/esquemas/ITEM"></import>
+	<complexType name="ITEMS">
+		<sequence>
+			<element name="ITEM" type="pref:ITEM" maxOccurs="unbounded" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/TOTALES" xmlns:tns="http://www.aduana.cl/xml/esquemas/TOTALES" elementFormDefault="qualified">
+
+    <complexType name="TOTALES">
+    	<sequence>
+    		<element name="TOTITEMS" type="string"></element>
+    		<element name="FOB" type="string"></element>
+			<element name="TOTHOJAS" type="string"></element>
+			<element name="CODFLE" type="string"></element>
+			<element name="FLETE" type="string"></element>
+			<element name="TOTBULTOS" type="string"></element>
+			<element name="CODSEG" type="string"></element>
+			<element name="SEGURO" type="string"></element>
+			<element name="TOTPESO" type="string"></element>
+			<element name="CIF" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

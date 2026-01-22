@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.aduana.cl/xml/esquemas/VISTOBUENO" xmlns:tns="http://www.aduana.cl/xml/esquemas/VISTOBUENO" elementFormDefault="qualified">
+
+    <complexType name="VISTOBUENO">
+    	<sequence>
+    		<element name="NUREGR" type="string"></element>
+    		<element name="ANOREG" type="string"></element>
+			<element name="CODVISBUEN" type="string"></element>
+			<element name="NUMREGLA" type="string"></element>
+			<element name="NUMANORES" type="string"></element>
+			<element name="CODULTVB" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>
