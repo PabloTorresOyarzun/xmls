@@ -1,4 +1,5 @@
 litestar
 uvicorn
 pydantic
-pydantic-xml
+pydantic-xml[lxml]
+lxml
