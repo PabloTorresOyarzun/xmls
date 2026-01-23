@@ -1,18 +1,53 @@
 import logging
 import httpx
 from lxml import etree
+from base64 import b64encode
 
 from app.config import get_settings
 
 logger = logging.getLogger(__name__)
 
 SOAP_NS = "http://schemas.xmlsoap.org/soap/envelope/"
+WSSE_NS = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
 
 
 class SoapClientService:
     def __init__(self):
         self.settings = get_settings()
         self.timeout = httpx.Timeout(30.0, connect=10.0)
+
+    def _add_ws_security_header(self, xml_str: str) -> str:
+        """Agrega header WS-Security con credenciales de usuario."""
+        agent_config = self.settings.get_active_agent_config()
+        ws_user = agent_config.ws_user
+        ws_password = self.settings.get_ws_password()
+
+        if not ws_user or not ws_password:
+            logger.warning("Credenciales WS no configuradas, enviando sin autenticación")
+            return xml_str
+
+        tree = etree.fromstring(xml_str.encode("utf-8"))
+        header = tree.find(f"{{{SOAP_NS}}}Header")
+        
+        if header is None:
+            envelope = tree
+            body = tree.find(f"{{{SOAP_NS}}}Body")
+            header = etree.Element(f"{{{SOAP_NS}}}Header")
+            envelope.insert(0, header)
+
+        # Crear elemento Security
+        security = etree.SubElement(header, f"{{{WSSE_NS}}}Security")
+        security.set(f"{{{SOAP_NS}}}mustUnderstand", "1")
+        
+        # UsernameToken
+        username_token = etree.SubElement(security, f"{{{WSSE_NS}}}UsernameToken")
+        username_elem = etree.SubElement(username_token, f"{{{WSSE_NS}}}Username")
+        username_elem.text = ws_user
+        password_elem = etree.SubElement(username_token, f"{{{WSSE_NS}}}Password")
+        password_elem.set("Type", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText")
+        password_elem.text = ws_password
+
+        return etree.tostring(tree, encoding="unicode", xml_declaration=True)
 
     async def send_din(self, signed_xml: str) -> dict:
         url = self.settings.aduana_recibe_din_url
@@ -21,14 +56,17 @@ class SoapClientService:
             "SOAPAction": '""',
         }
 
+        # Agregar autenticación WS-Security
+        xml_with_auth = self._add_ws_security_header(signed_xml)
+
         logger.info(f"Enviando DIN a: {url}")
-        logger.debug(f"XML a enviar (primeros 500 chars): {signed_xml[:500]}")
+        logger.debug(f"XML a enviar (primeros 500 chars): {xml_with_auth[:500]}")
 
         try:
             async with httpx.AsyncClient(timeout=self.timeout) as client:
                 response = await client.post(
                     url,
-                    content=signed_xml.encode("utf-8"),
+                    content=xml_with_auth.encode("utf-8"),
                     headers=headers,
                 )
 
@@ -70,6 +108,8 @@ class SoapClientService:
         }
 
         consulta_xml = self._build_consulta_xml(ticket_id)
+        # Agregar autenticación
+        consulta_xml_auth = self._add_ws_security_header(consulta_xml)
 
         logger.info(f"Consultando DIN ticket: {ticket_id}")
 
@@ -77,7 +117,7 @@ class SoapClientService:
             async with httpx.AsyncClient(timeout=self.timeout) as client:
                 response = await client.post(
                     url,
-                    content=consulta_xml.encode("utf-8"),
+                    content=consulta_xml_auth.encode("utf-8"),
                     headers=headers,
                 )
 

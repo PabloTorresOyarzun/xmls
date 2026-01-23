@@ -5,6 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 from lxml import etree
 
 from app.models.din import DINModel
+from app.services.validators import validate_din
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +13,16 @@ TEMPLATES_DIR = Path(__file__).parent.parent / "templates"
 
 
 class XMLBuilderService:
-    def __init__(self):
+    def __init__(self, apply_validations: bool = True):
+        """
+        Inicializa el servicio de construcción de XML.
+        
+        Args:
+            apply_validations: Si True, aplica todas las validaciones y
+                               transformaciones del sistema legacy antes
+                               de generar el XML.
+        """
+        self.apply_validations = apply_validations
         self.env = Environment(
             loader=FileSystemLoader(str(TEMPLATES_DIR)),
             autoescape=False,
@@ -22,6 +32,16 @@ class XMLBuilderService:
         self.template = self.env.get_template("din_soap.xml.j2")
 
     def build_xml(self, din: DINModel) -> str:
+        """
+        Construye el XML a partir del modelo DIN.
+        
+        Aplica validaciones y transformaciones si apply_validations=True.
+        """
+        # Aplicar validaciones si está habilitado
+        if self.apply_validations:
+            logger.info("Aplicando validaciones y transformaciones")
+            din = validate_din(din)
+
         din_dict = din.model_dump(by_alias=False)
         # Renombrar 'items' para evitar conflicto con método builtin de dict
         if 'items' in din_dict:

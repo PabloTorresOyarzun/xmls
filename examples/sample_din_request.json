@@ -204,21 +204,50 @@
       "MON199": "0000000000.00",
       "CUENTASGIRO": {
         "CUENTAGIRO": [
-          {"CTAOTRO": "223", "MONOTRO": "0000000000.00"},
-          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
-          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
-          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
-          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
-          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
-          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"},
-          {"CTAOTRO": "000", "MONOTRO": "0000000000.00"}
+          {
+            "CTAOTRO": "223",
+            "MONOTRO": "0000000000.00"
+          },
+          {
+            "CTAOTRO": "000",
+            "MONOTRO": "0000000000.00"
+          },
+          {
+            "CTAOTRO": "000",
+            "MONOTRO": "0000000000.00"
+          },
+          {
+            "CTAOTRO": "000",
+            "MONOTRO": "0000000000.00"
+          },
+          {
+            "CTAOTRO": "000",
+            "MONOTRO": "0000000000.00"
+          },
+          {
+            "CTAOTRO": "000",
+            "MONOTRO": "0000000000.00"
+          },
+          {
+            "CTAOTRO": "000",
+            "MONOTRO": "0000000000.00"
+          },
+          {
+            "CTAOTRO": "000",
+            "MONOTRO": "0000000000.00"
+          }
         ]
       }
     },
     "ANEXASDIN": {},
     "ERRORES": {
       "FECHAPROCESO": "",
-      "ERROR": []
+      "ERROR": [
+        {
+          "CODIGO": "000",
+          "GLOSA": "SIN ERRORES"
+        }
+      ]
     }
   }
 }

@@ -37,7 +37,6 @@ class DINController(Controller):
         """Endpoint para probar contraseñas de certificados."""
         from pathlib import Path
         from cryptography.hazmat.primitives.serialization import pkcs12
-        from cryptography.hazmat.backends import default_backend
 
         cert_path = Path(data.cert_path)
         if not cert_path.exists():
@@ -56,7 +55,7 @@ class DINController(Controller):
             password = data.password.encode("utf-8") if data.password else None
 
             key, cert, chain = pkcs12.load_key_and_certificates(
-                pfx_data, password, default_backend()
+                pfx_data, password
             )
 
             return Response(

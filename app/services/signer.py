@@ -3,7 +3,6 @@ from pathlib import Path
 from lxml import etree
 from signxml import XMLSigner, methods
 from cryptography.hazmat.primitives.serialization import pkcs12
-from cryptography.hazmat.backends import default_backend
 from cryptography.x509 import Certificate
 from cryptography.hazmat.primitives.asymmetric.rsa import RSAPrivateKey
 
@@ -31,11 +30,12 @@ class SignerService:
         with open(cert_path, "rb") as f:
             pfx_data = f.read()
 
-        password = self.agent_config.cert_password.encode("utf-8")
+        password = self.agent_config.cert_password.encode("utf-8") if self.agent_config.cert_password else None
 
         try:
+            # cryptography >= 43 no requiere backend
             self._private_key, self._certificate, _ = pkcs12.load_key_and_certificates(
-                pfx_data, password, default_backend()
+                pfx_data, password
             )
             logger.info(f"Certificado cargado: {self.agent_config.cod_agente}")
         except Exception as e:
@@ -80,7 +80,13 @@ class SignerService:
         parser = etree.XMLParser(remove_blank_text=True)
         xml_tree = etree.fromstring(xml_str.encode("utf-8"), parser=parser)
         signed_tree = self.sign_xml(xml_tree)
-        return etree.tostring(signed_tree, encoding="unicode", xml_declaration=True)
+        # Serializar a bytes con declaración XML, luego decodificar
+        xml_bytes = etree.tostring(
+            signed_tree, 
+            encoding="UTF-8", 
+            xml_declaration=True
+        )
+        return xml_bytes.decode("utf-8")
 
     def get_certificate_info(self) -> dict:
         if self._certificate is None:
